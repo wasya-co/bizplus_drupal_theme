@@ -1,0 +1,40 @@
+{% set base_url = url('<front>')  %}
+<!-- Register Page banner -->
+{% if register_banner_title %}
+    <section class="page-title page-title-padd" style="background-image: url({{ register_banner_img }}); background-repeat: no-repeat; background-size: cover;background-position: center;position: relative;">
+        <div class="container">
+            <div class="page-title-block">
+                <h1>{{ register_banner_title }}</h1>
+                <p><a href="{{ base_url }}" title="Home">Home</a> / <span>{{ register_banner_title }}</span></p>
+            </div>
+        </div>
+    </section>
+{% endif %}
+<!-- Register Page -->
+<section class="page-register">
+    <div class="container">
+        <div class="page-form-block">
+            <div class="form-wrapper" style="background-image: url('{{ register_bg_img }}');background-repeat: no-repeat;background-position: center;background-size: cover;">
+                <div class="content-wrapper">
+                    <h2>{{ register_title }}</h2>
+                    <div class="form">
+                        <div class="form-group">
+                            {{ form.account.mail }}
+                        </div>
+                        <div class="form-group">
+                            {{ form.account.name }}
+                        </div>  
+                        <div class="sign-up-btn">
+                            {{ form.actions }}
+                        </div>
+                        <div class="link-wrapper">
+                            <p>Already have an account? <a href="{{base_url}}user/login" title="Login">Login</a></p>
+                        </div>
+                        {{ form.form_build_id }}
+                        {{ form.form_id }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

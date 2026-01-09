@@ -1,0 +1,24 @@
+<section class="home1 home1-FAQ">
+    <div class="container">
+        <div class="home1-FAQ-block">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="content-wrapper aos-init" data-aos="fade-up">
+                        <span class="mini-title">{{ content.field_tagline.0 }}</span>
+                        {% if content.field_title.0 %}
+                            <h2 class="left-title">{{ content.field_title.0 }}</h2>
+                        {% endif %}
+                        <a href="{{ content.field_button_link.0['#url'] }}" title="{{ content.field_button_link.0['#title'] }}" class="btn btn-primary left-btn">{{ content.field_button_link.0['#title'] }}</a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="accordion-block aos-init" data-aos="fade-up">
+                        <div id="accordion1">
+                            {{ content.field_faq_style_1 }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

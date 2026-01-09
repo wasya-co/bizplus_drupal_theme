@@ -1,0 +1,80 @@
+{% set paragraph_parent = paragraph.getParentEntity() %}
+{% set variant = paragraph_parent.field_pricing_style.value %}
+{% if variant in 'without-border' %}
+    <div class="col-md-4 col-sm-6 aos-init aos-animate" data-aos="fade-up" data-aos-duration="200">
+        {% if content.field_featured.0['#markup'] in '1' %}
+            <div class="pricing-area  diff-pricing-area">
+        {% else %}
+            <div class="pricing-area">
+        {% endif %}
+            <div class="price-tag">
+                <p class="price-category">{{ content.field_category.0 }}</p>
+                <span>{{ content.field_price.0 }}</span>
+            </div>
+            <div class="price-list">
+                <ul class="list-unstyled">
+                     {{ content.field_pricing_feature }}
+                </ul>
+            </div>
+            <a href="{{content.field_button_link.0['#url']}}" title="{{content.field_button_link.0['#title']}}" class="btn btn-primary">{{content.field_button_link.0['#title']}}</a>
+        </div>
+    </div>
+{% elseif variant in 'with-bg' %}    
+    <div class="col-md-4 col-sm-6 aos-init aos-animate" data-aos="fade-up" data-aos-duration="200">
+        {% if content.field_featured.0['#markup'] in '1' %}
+            <div class="pricing-area  diff-pricing-area">
+        {% else %}
+            <div class="pricing-area">
+        {% endif %}
+            <div class="price-tag">
+                <p class="price-category">{{ content.field_category.0 }}</p>
+                <span>{{ content.field_price.0 }}</span>
+                <span class="month">{{ content.field_period.0 }}</span>
+            </div>
+            <div class="price-list">
+                <ul class="list-unstyled">
+                     {{ content.field_pricing_feature }}
+                </ul>
+            </div>
+            <a href="{{content.field_button_link.0['#url']}}" title="{{content.field_button_link.0['#title']}}" class="btn btn-primary">{{content.field_button_link.0['#title']}}</a>
+        </div>
+    </div>
+{% elseif variant in 'border-primary' %}    
+    <div class="col-md-4 col-sm-6 aos-init aos-animate" data-aos="fade-up" data-aos-duration="200">
+        {% if content.field_featured.0['#markup'] in '1' %}
+            <div class="pricing-area  diff-pricing-area">
+        {% else %}
+            <div class="pricing-area">
+        {% endif %}
+            <div class="price-tag">
+                <p class="price-category">{{ content.field_category.0 }}</p>
+                <span>{{ content.field_price.0 }}</span>
+            </div>
+            <div class="price-list">
+                <ul class="list-unstyled">
+                     {{ content.field_pricing_feature }}
+                </ul>
+            </div>
+            <a href="{{content.field_button_link.0['#url']}}" title="{{content.field_button_link.0['#title']}}" class="btn btn-primary">{{content.field_button_link.0['#title']}}</a>
+        </div>
+    </div>
+{% else %}
+    <div class="col-md-4 col-sm-6 aos-init" data-aos="fade-up" data-aos-duration="1200">
+        {% if content.field_featured.0['#markup'] in '1' %}
+            <div class="pricing-area  diff-pricing-area">
+        {% else %}
+            <div class="pricing-area">
+        {% endif %}
+            <div class="price-tag">
+                <span>{{ content.field_price.0 }}</span>
+                <p class="price-category">{{ content.field_category.0 }}</p>
+            </div>
+            <div class="price-list">
+                <ul class="list-unstyled">
+                    {{ content.field_pricing_feature }}
+                </ul>
+            </div>
+            <a href="{{content.field_button_link.0['#url']}}" title="{{content.field_button_link.0['#title']}}" class="btn btn-primary">{{content.field_button_link.0['#title']}}</a>
+        </div>
+    </div>
+{% endif %}

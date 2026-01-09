@@ -1,0 +1,33 @@
+<section class="contact2">
+    <div class="container">
+        <div class="contact2-block">
+            <div class="img-wrapper">
+                <img src="{{file_url(content.field_image['#items'].entity.uri.value)}}" alt="Contact-Image"/>
+            </div>
+            <div class="contact-content">
+                <div class="divider-wrapper">
+                    <p>{{content.field_tagline.0}}</p>
+                    <h2>{{content.field_title.0}}</h2>
+                </div>
+                {{content.field_description.0}}
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="forms-block">
+                            <h3>{{content.field_form_title.0}}</h3>
+                            <div class="form1">
+                               {{content.field_contact_form}} 
+                            </div>
+                        </div>                     
+                    </div>
+                    <div class="col-md-4">
+                        <div class="details-wrapper">
+                            <ul class="list-unstyled">
+                                {{content.field_contact_address}}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>    

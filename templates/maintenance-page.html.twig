@@ -1,0 +1,70 @@
+{#
+/**
+ * @file
+ * Theme override to display a single Drupal page while offline.
+ *
+ * All available variables are mirrored in page.html.twig.
+ * Some may be blank but they are provided for consistency.
+ *
+ * @see template_preprocess_maintenance_page()
+ */
+#}
+
+{% set base_url = url('<front>') %}
+{% if "1" in mode_type  %}
+    <!-- maintenance_mode -->
+        <section class="page-Coming page-maintenance" style="background-image: url('{{ maintenance_image }}');background-repeat: no-repeat;background-position: center;background-size: cover;">
+            <div class="container">
+                <div class="page-Coming-block">
+                    <div class="coming-wrapper">
+                        <h1>{{ maintenance_mode_title }}</h1>
+                        <p>{{ maintenance_mode_description }}</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    <!-- maintenance_mode End-->
+{% else %}
+    <!-- coming soon Start-->
+        <section class="page-Coming" style="background-image: url('{{ coming_soon_image }}');background-repeat: no-repeat;background-position: center;background-size: cover;">
+            <div class="container">
+                <div class="page-Coming-block">
+                    <div class="coming-wrapper">
+                        <h1>{{ coming_soon_title }}</h1>
+                        <p>{{ coming_soon_description }}</p>
+                        <div id="timer-wrapper" class="timer-wrapper">
+                            <div id="clockdiv" class="cs-counter">
+                                <ul class="list-unstyled">
+                                    <li>
+                                        <div class="cs-date">
+                                            <span class="days time" id="day">00</span>
+                                            <p class="counting-title">DAYS</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="cs-date">
+                                            <span class="hours time" id="hour">00</span>
+                                            <p class="counting-title">HOURS</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="cs-date">
+                                            <span class="minutes time" id="minute">00</span>
+                                            <p class="counting-title">MINS</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="cs-date">
+                                            <span class="seconds time" id="second">00</span>
+                                            <p class="counting-title">SECS</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    <!-- coming soon End-->
+{% endif %}

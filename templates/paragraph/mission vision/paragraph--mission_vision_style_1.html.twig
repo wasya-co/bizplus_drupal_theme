@@ -1,0 +1,33 @@
+        <section class="about-us1">
+            <div class="container">
+                <div class="about-us1-block">
+                    <div class="about-wrapper">
+                        <span>{{content.field_tagline.0}}</span>
+                        <span class="vertical-line"></span>
+                        <div class="about-content">
+                            <h2>{{content.field_title.0}}</h2>
+                            {{content.field_description.0}}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="img-wrapper">
+                                <img src="{{file_url(content.field_image['#items'].entity.uri.value)}}" alt="About-Image"/>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="img-content">
+                                <div class="content-wrapper">
+                                    <h3>{{content.field_mission_title.0}}</h3>
+                                    {{content.field_mission.0}}
+                                </div>
+                                <div class="content-wrapper">
+                                    <h3>{{content.field_vision_title.0}}</h3>
+                                    {{content.field_vision.0}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>

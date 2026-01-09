@@ -1,0 +1,12 @@
+{% set paragraph_parent = paragraph.getParentEntity() %}
+{% set variant = paragraph_parent.field_featured_with_svg.value %}
+{% if variant in 'featured with svg' %}
+    <li>
+        <svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" viewBox="0 0 150 150">
+            <path data-name="Path 39256" d="M296.2,151.2a9.784,9.784,0,0,0-9.783,9.783v55.434H230.982a9.783,9.783,0,1,0,0,19.566h55.434v55.434a9.783,9.783,0,0,0,19.566,0V235.983h55.434a9.783,9.783,0,0,0,0-19.566H305.982V160.983A9.783,9.783,0,0,0,296.2,151.2Z" transform="translate(-221.199 -151.2)" fill="#111"></path>
+        </svg>
+        <p>{{ content.field_feature.0 }}</p>
+    </li>
+{% else %}        
+    <li>{{ content.field_feature.0 }}</li>
+{% endif %}

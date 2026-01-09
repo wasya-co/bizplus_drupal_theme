@@ -1,0 +1,35 @@
+{% set paragraph_parent = paragraph.getParentEntity() %}
+{% set variant = paragraph_parent.field_slider_style.value %}
+{% if variant in 'style2' %}
+    <li class="carousel-item">
+        <div class="content-wrapper">
+            <h2>{{content.field_title.0}}</h2>
+            {{content.field_description.0}}
+            <a href="{{content.field_button_link.0['#url']}}" title="Get Quote" class="btn btn-primary left-btn">{{content.field_button_link.0['#title']}}</a>
+        </div>
+    </li>
+{% elseif variant in 'style3' %}
+    <div class="swiper-slide">
+        <div class="info-wrapper">
+            <h2>{{content.field_title.0}}</h2>
+            <a href="{{content.field_button_link.0['#url']}}" title="Get Quote" class="btn btn-primary">{{content.field_button_link.0['#title']}}</a>
+        </div>
+    </div>
+{% else %}
+    <div class="swiper-slide">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="content-wrapper">
+                    <h2>{{content.field_title.0}}</h2>
+                    {{content.field_description.0}}
+                    <a href="{{content.field_button_link.0['#url']}}" title="Get Quote" class="btn btn-primary">{{content.field_button_link.0['#title']}}</a>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="img-wrapper">
+                    <img src="{{file_url(content.field_image['#items'].entity.uri.value)}}" alt="Info-Image"/>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endif %}

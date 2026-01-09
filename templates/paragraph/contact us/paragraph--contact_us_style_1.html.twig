@@ -1,0 +1,23 @@
+<section class="home1 home1-contact" style="background-image: url('{{ content.field_background_image.0 }}');background-repeat: no-repeat;background-position: center;background-size: cover;">
+    <div class="container">
+        <div class="home1-contact-block">
+            <div class="row">
+                <div class="col-md-6 aos-init aos-animate" data-aos="fade-up" data-aos-duration="400">
+                    <div class="content-wrapper">
+                        <span class="mini-title">{{ content.field_tag_line.0 }}</span>
+                        <h2 class="left-title">{{ content.field_title.0 }}</h2>
+                        {{ content.field_description.0 }}
+                        <a href="{{ content.field_button_link.0['#url'] }}" title="{{ content.field_button_link.0['#title'] }}" class="btn btn-primary left-btn">{{ content.field_button_link.0['#title'] }}</a>
+                    </div>
+                </div>
+                <div class="col-md-6 aos-init aos-animate" data-aos="fade-up" data-aos-duration="700">
+                    <div class="contact-area">
+                        <h3>{{ content.field_contact_title.0 }}</h3>
+                        {{ content.field_contact_description.0 }}
+                        {{ content.field_phone_number.0 }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

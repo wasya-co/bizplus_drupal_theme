@@ -1,0 +1,33 @@
+<section class="home2 home2-whychoose about-whychoose">
+    <div class="container">
+        <div class="home2-whychoose-block">
+            <div class="text-center aos-init aos-animate" data-aos="zoom-in">
+                <h2>{{content.field_title.0}}</h2>
+                {{content.field_description.0}}
+            </div>
+            <div class="row">
+                {{content.field_title_with_description}}
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="page-video">
+    <div class="container">
+        <div class="page-video-block">
+            <div class="audio-video-block">
+                <a class="video-popup video1-area" href="{{content.field_link.0['#url']}}">
+                    <img src="{{file_url(content.field_background_image['#items'].entity.uri.value)}}" alt="video-1">
+                    <div class="video1-icon">
+                        <svg class="svg-play" xmlns="http://www.w3.org/2000/svg" width="150" height="150" viewBox="0 0 150 150">
+                            <g data-name="Group 40008" transform="translate(-708 -2701)">
+                                <path data-name="Path 39031" d="M319.916,192.009l-50.077,28.91a5.289,5.289,0,0,1-7.948-4.586V158.505a5.289,5.289,0,0,1,7.948-4.586l50.077,28.91a5.307,5.307,0,0,1,0,9.179Z" transform="translate(497.247 2588.581)" fill="#111" fill-rule="evenodd"/>
+                                <path data-name="Path 39032" d="M145,0A75,75,0,1,1,70,75,75,75,0,0,1,145,0Zm0,8.727A66.273,66.273,0,1,0,211.273,75,66.272,66.272,0,0,0,145,8.727Z" transform="translate(638 2701)" fill="#111"/>
+                            </g>
+                        </svg>
+                    </div>
+                </a>
+            </div>                        
+        </div>
+    </div>
+</div>

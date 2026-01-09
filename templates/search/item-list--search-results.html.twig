@@ -1,0 +1,27 @@
+{% set base_url = url('<front>') %}
+<div class="search-form-business">
+  <form class="form-search" action="{{base_url}}/search/node" method="get">
+    <input class="form-control"  id="search"  type="search" placeholder="Enter Key Words" aria-label="Search" name="keys">
+    <button type="submit">
+        <svg xmlns="http://www.w3.org/2000/svg" width="149.984" height="150" viewBox="0 0 149.984 150">
+            <path data-name="Path 39248" d="M251.558,97.945a63.618,63.618,0,0,0-48.142,105.227L165.2,241.457l6.488,6.488,38.24-38.285A63.618,63.618,0,1,0,251.559,97.945Zm38.491,102.038a54.1,54.1,0,1,1,16.093-38.5A54.447,54.447,0,0,1,290.049,199.983Z" transform="translate(-165.199 -97.945)" fill="#111"></path>
+        </svg>
+    </button>
+  </form>
+  <div class="text-center">
+    <h2>Search Result - "{{ keyword }}"</h2>
+    <p>We Found <span>{{ total_items_count }}</span> Search Results For "{{ keyword }}"</p>
+  </div>
+</div>
+<div class="serach-content aos-init aos-animate" data-aos="fade-up" data-aos-duration="1000">
+  {%- if title is not empty -%}
+    <h2 class="text-center">{{ title }}</h2>
+  {%- endif -%}
+  {%- if items -%}
+        {%- for item in items -%}
+          {{ item.value }}
+        {%- endfor -%}
+{%- else -%}
+	{{- empty -}}
+{%- endif -%}
+</div>

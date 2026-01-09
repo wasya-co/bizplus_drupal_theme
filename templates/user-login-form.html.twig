@@ -1,0 +1,42 @@
+{% set base_url = url('<front>')  %}
+<!-- Login Page banner -->
+{% if login_banner_title %}
+    <section class="page-title page-title-padd" style="background-image: url({{ login_banner_img }}); background-repeat: no-repeat; background-size: cover;background-position: center;position: relative;">
+        <div class="container">
+            <div class="page-title-block">
+                <h1>{{ login_banner_title }}</h1>
+                <p><a href="{{ base_url }}" title="Home">Home</a> / <span>{{ login_banner_title }}</span></p>
+            </div>
+        </div>
+    </section>
+{% endif %}
+<!-- Login Section Starts-->
+    <section class="page-login">
+        <div class="container">
+            <div class="page-form-block">
+                <div class="form-wrapper" style="background-image: url('{{ login_bg_img }}');background-repeat: no-repeat;background-position: center;background-size: cover;">
+                    <div class="content-wrapper">
+                        <h2>{{ login_title }}</h2>
+                        <div class="form">
+                            <div class="form-group">
+                                {{ form.name }}
+                            </div>
+                            <div class="form-group">
+                                {{ form.pass }}
+                            </div>
+                            <div class="login-btn">
+                                {{ form.actions }}
+                            </div>
+                            <div class="link-wrapper">
+                                <p>Don't have an account? <a href="{{base_url}}user/register" class="login-link" title="Sign Up">Sign up</a></p>
+                                <p><a href="{{ base_url }}user/password" class="login-link" title="Forgot Password">Forgot Password?</a></p>
+                            </div>
+                        </div>
+                    {{ form.form_build_id }}
+                    {{ form.form_id }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<!-- Login Section Ends-->

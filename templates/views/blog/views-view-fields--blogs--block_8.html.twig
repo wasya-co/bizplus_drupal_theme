@@ -1,0 +1,18 @@
+<div class="col-md-6 aos-init aos-animate" data-aos="fade-up">
+    <div class="content-block">
+        <div class="img-wrapper">
+            <a href="{{ fields.view_node.content }}" title="{{fields.view_node_1.content}}">
+                <img src="{{ fields.field_image.content }}" alt="Blog-Image"/>
+            </a>
+        </div>
+        <div class="content-wrapper">
+            <h5 class="title-link"><a href="{{ fields.view_node.content }}" title="{{fields.view_node_1.content}}">{{ fields.title.content }}</a></h5>
+            <div class="blog-area">
+                <p>{{fields.created.content}}</p>
+                <p>{{fields.comment_count.content}}</p>
+            </div>
+            {{fields.field_description.content}}
+            <a class="read" href="{{fields.view_node.content}}" title="{{fields.view_node_1.content}}">{{fields.view_node_1.content}}</a>
+        </div>
+    </div>
+</div>

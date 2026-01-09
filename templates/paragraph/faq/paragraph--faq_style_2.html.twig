@@ -1,0 +1,18 @@
+<section class="home2 home2-FAQ">
+    <div class="container">
+        <div class="home2-FAQ-block">
+            <div class="text-center aos-init aos-animate" data-aos="zoom-in">
+                {% if content.field_title.0 %}
+                    <h2>{{ content.field_title.0 }}</h2>
+                {% endif %}
+                {{ content.field_description.0}}
+            </div>
+            <div class="accordion-block">
+                <div id="accordion2">
+                    {{ content.	field_faq_style_2 }}
+                </div>
+            </div>
+            <img class="faq-dots" src="{{ file_url(content.field_image['#items'].entity.uri.value)}}" alt="{{ content.field_image['#items'].alt }}" title="{{ content.field_image['#items'].title }}">
+        </div>
+    </div>
+</section>

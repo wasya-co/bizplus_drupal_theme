@@ -1,0 +1,10 @@
+<ul class="list-unstyled">
+{% for key,value in content.field_social_icons_['#items'] %}
+
+    <li><a href="https://www.facebook.com/" target="_blank" title="facebook">
+        {{content.field_social_icons_[key]}}
+    </a></li>
+    
+     {% endfor %}
+
+</ul>

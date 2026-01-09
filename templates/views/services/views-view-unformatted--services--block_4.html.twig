@@ -1,0 +1,25 @@
+<section class="services service-list1">
+	<div class="container">
+		<div class="services-block">
+			<div class="service4">
+				
+		{% for row in rows %}
+        {% if loop.index is odd %}
+            <div class = "first">
+              {{ row.content }}
+            </div>
+        {% else %}
+            <div class = "second">
+              {{ row.content }}
+            </div>
+        {% endif %}
+      {% endfor %}
+				
+			</div>
+ 		</div>
+    </div>
+</section>
+
+
+
+      

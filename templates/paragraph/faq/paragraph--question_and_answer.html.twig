@@ -1,0 +1,57 @@
+{% if accordion_id =="faq_style_2"%}
+    <div class="content2 aos-init aos-animate" data-aos="fade-up">
+        <div class="main-content">
+            <a class="icon collapsed" data-bs-toggle="collapse" href="#accordion2-{{paragraph.id()}}" role="button" aria-expanded="false" aria-controls="accordion2-{{paragraph.id()}}">
+                 {{ content.field_question.0 }}
+                <i>
+                    <svg class="svg-minus d-none" xmlns="http://www.w3.org/2000/svg" width="150" height="75" viewBox="0 0 150 75">
+                        <path data-name="Path 39280" d="M.527,73.734,72.008.528A1.735,1.735,0,0,1,73.921.136,1.777,1.777,0,0,1,75,1.774V21.937a1.688,1.688,0,0,1-.521,1.247L23.866,75.019l50.609,51.8A1.834,1.834,0,0,1,75,128.063v20.163a1.775,1.775,0,0,1-1.079,1.639,1.679,1.679,0,0,1-1.877-.392L.522,76.227A1.81,1.81,0,0,1,0,74.98a1.749,1.749,0,0,1,.522-1.247Z" transform="translate(150) rotate(90)" fill="#111"></path>
+                    </svg>
+                    <svg class="svg-plus d-block" xmlns="http://www.w3.org/2000/svg" width="150" height="75" viewBox="0 0 150 75">
+                        <path data-name="Path 39277" d="M.527,76.266l71.48,73.207a1.735,1.735,0,0,0,1.913.392A1.777,1.777,0,0,0,75,148.226V128.063a1.688,1.688,0,0,0-.521-1.247L23.866,74.981l50.609-51.8A1.834,1.834,0,0,0,75,21.937V1.775A1.775,1.775,0,0,0,73.917.136,1.679,1.679,0,0,0,72.04.528L.522,73.773A1.81,1.81,0,0,0,0,75.02a1.749,1.749,0,0,0,.522,1.247Z" transform="translate(0 75) rotate(-90)" fill="#111"></path>
+                    </svg>
+                </i>
+            </a>
+        </div>
+        <div class="sub-content collapse" id="accordion2-{{paragraph.id()}}" data-bs-parent="#accordion2">
+            <div class="card card-body">
+                {{ content.field_answer.0 }}
+            </div>
+        </div>
+    </div>
+{% elseif accordion_id =="faq_style_3" %}
+                <div class="content3">
+        <div class="main-content">
+            <a class="icon collapsed" data-bs-toggle="collapse" href="#accordion1-{{paragraph.id()}}" role="button" aria-expanded="false" aria-controls="accordion1-{{paragraph.id()}}">
+                {{ content.field_question.0 }}
+                
+            </a>
+        </div>
+        <div class="sub-content collapse" id="accordion1-{{paragraph.id()}}" data-bs-parent="#accordion1">
+            <div class="card card-body">
+            {{ content.field_answer.0 }}
+            </div>
+        </div>
+    </div>
+{% else %}
+    <div class="content1">
+        <div class="main-content">
+            <a class="icon collapsed" data-bs-toggle="collapse" href="#accordion1-{{paragraph.id()}}" role="button" aria-expanded="false" aria-controls="accordion1-{{paragraph.id()}}">
+                {{ content.field_question.0 }}
+                <i>
+                    <svg class="svg-minus d-none" xmlns="http://www.w3.org/2000/svg" width="150" height="25" viewBox="0 0 150 25">
+                        <path d="M290,257.5A12.5,12.5,0,0,1,277.5,270h-125a12.5,12.5,0,0,1,0-25h125A12.5,12.5,0,0,1,290,257.5Z" transform="translate(-140 -245)" fill="#111"></path>
+                    </svg>
+                    <svg class="svg-plus d-block" xmlns="http://www.w3.org/2000/svg" width="150" height="150" viewBox="0 0 150 150">
+                        <path data-name="Path 39008" d="M296.2,151.2a9.784,9.784,0,0,0-9.783,9.783v55.434H230.982a9.783,9.783,0,1,0,0,19.566h55.434v55.434a9.783,9.783,0,0,0,19.566,0V235.983h55.434a9.783,9.783,0,1,0,0-19.566H305.982V160.983A9.783,9.783,0,0,0,296.2,151.2Z" transform="translate(-221.199 -151.2)" fill="#111"></path>
+                    </svg>
+                </i>
+            </a>
+        </div>
+        <div class="sub-content collapse" id="accordion1-{{paragraph.id()}}" data-bs-parent="#accordion1">
+            <div class="card card-body">
+            {{ content.field_answer.0 }}
+            </div>
+        </div>
+    </div>
+{% endif %}

@@ -1,0 +1,25 @@
+
+{%
+  set classes = [
+    'block',
+    'block-' ~ configuration.provider|clean_class,
+    'block-' ~ plugin_id|clean_class,
+  ]
+%}
+<div{{ attributes.addClass(classes) }}>
+  {{ title_prefix }}
+
+  {{ title_suffix }}
+  {% block content %}
+    <div{{ content_attributes.addClass('content') }}>
+         <div class="col-md-12">
+            <div class="sidebar">
+                <div class="content-wrapper">
+                    <h3 data-aos="fade-in"{{ title_attributes }}>{{ label }}</h3>
+                    {{ content }}
+                </div>
+            </div>
+        </div>
+    </div>
+  {% endblock %}
+</div>

@@ -1,0 +1,14 @@
+<div class="career-wrapper">
+    <div class="content-wrapper">
+        <a class="title-link" href="{{ fields.view_node.content }}" title="{{ fields.view_node_1.content }}">
+            <h3>{{ fields.title.content }}</h3>
+        </a>
+        <p>{{fields.field_details.content|striptags }}</p>
+        <ul class="list-unstyled career-list">
+            <li>{{ fields.field_location.content }}</li>
+            <li>{{ fields.field_job_ty.content }}</li>
+            <li>{{ fields.field_salary.content }}</li>
+        </ul>
+    </div>
+    <a href="{{ fields.view_node.content }}" title="{{ fields.view_node_1.content }}" class="btn btn-primary center-btn">{{ fields.view_node_1.content }}</a>
+</div>

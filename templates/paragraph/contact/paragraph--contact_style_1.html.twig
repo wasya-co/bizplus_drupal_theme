@@ -1,0 +1,66 @@
+{% if content.field_contact_style.0['#markup'] in 'without-bg' %}
+    <section class="home2 home2-contact">
+        <div class="container">
+            <div class="home2-contact-block">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="content-wrapper">
+                        <h2>{{content.field_title.0}}</h2>
+                            {{content.field_description.0}}
+                            <ul class="list-unstyled">
+                                {{content.field_contact_address}}
+                            </ul>    
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-wrapper">
+                            <h2>{{content.field_form_title.0}}</h2>
+                            {{content.field_form_description.0}}
+                            <div class="forms-block aos-init" data-aos="fade-up">
+                                <div class="form1">
+                                {{content.field_contact_form}}
+                                </div>
+                            </div>                      
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% else %}
+    <section class="contact1">
+        <div class="container-fluid">
+            <p class="map-wrapper">
+                <iframe src="https://maps.google.com/maps?q=chicago&amp;t=&amp;z=13&amp;ie=UTF8&amp;iwloc=&amp;output=embed" style="border:0" allowfullscreen=""></iframe>
+            </p>
+            <div class="contact1-block" style="background-image: url({{file_url(content.field_background_image['#items'].entity.uri.value)}});background-repeat: no-repeat;background-position: center;background-size: cover;">
+                <div class="container">
+                    <div class="home2-contact-block">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="content-wrapper">
+                                    <h2>{{content.field_title.0}}</h2>
+                                    {{content.field_description.0}}
+                                    <ul class="list-unstyled">
+                                        {{content.field_contact_address}}
+                                    </ul>    
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-wrapper">
+                                    <h2>{{content.field_form_title.0}}</h2>
+                                    {{content.field_form_description.0}}
+                                    <div class="forms-block aos-init aos-animate" data-aos="fade-up">
+                                        <div class="form1">
+                                            {{content.field_contact_form}}
+                                        </div>
+                                    </div>                      
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endif %}

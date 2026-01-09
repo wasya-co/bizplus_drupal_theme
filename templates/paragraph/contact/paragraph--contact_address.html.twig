@@ -1,0 +1,16 @@
+{% if paragraph_parent =="contact_style_2"%}
+<li data-aos="fade-up" class="aos-init aos-animate">
+    <div class="contact-content">
+        <h4>{{content.field_title.0}}</h4>
+        {{content.field_description.0}}
+    </div>
+</li>
+{% else %}
+    <li data-aos="fade-up" class="aos-init aos-animate">
+        {{content.field_icon}}
+        <div class="contact-content">
+            <h3>{{content.field_title.0}}</h3>
+            {{content.field_description.0}}
+        </div>
+    </li>
+{% endif %}

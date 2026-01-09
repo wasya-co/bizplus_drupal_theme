@@ -1,0 +1,13 @@
+{% if content.field_counter_variant.0['#markup'] in 'with-bg' %}
+    {% include '@business_plus/paragraph/counter/counter-with-bg.html.twig' %}
+{% else %}
+<div class="home2 home2-range">
+    <div class="container">
+        <div class="home2-range-block">
+            <div class="row">
+                {{ content.field_counter }}
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}

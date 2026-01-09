@@ -1,0 +1,22 @@
+{% set paragraph_parent = paragraph.getParentEntity() %}
+{% set variant = paragraph_parent.field_counter_variant.value %}
+{% if variant in 'with-bg' %}
+    <div class="col-md-3 col-sm-6 aos-init aos-animate" data-aos="fade-up" data-aos-duration="200">
+        <div class="counter-wrapper">
+            <p class="count-range">
+                <span data-purecounter-start="0" data-purecounter-end="{{ content.field_count.0 }}" class="purecounter" data-purecounter-duration="1"></span>{{ content.field_period.0 }}
+            </p>
+            <p>{{ content.field_title.0 }}</p>
+        </div>
+    </div>
+{% else %}
+    <div class="col-md-3 col-sm-6 aos-init aos-animate" data-aos="fade-up" data-aos-duration="200">
+        <div class="counter-wrapper">
+            <div class="divider-wrapper">
+                {{ content.field_icon.0 }}
+                <p>{{ content.field_title.0 }}</p>
+            </div>
+            <p class="count-range"><span data-purecounter-start="0" data-purecounter-end="{{ content.field_count.0 }}" class="purecounter" data-purecounter-duration="1"></span>{{ content.field_period.0 }}</p>
+        </div>
+    </div>
+{% endif %}

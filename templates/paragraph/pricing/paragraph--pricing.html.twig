@@ -1,0 +1,11 @@
+{% if content.field_pricing_style.0['#markup'] in 'with-bg' %}
+    {% include '@business_plus/paragraph/pricing/pricing-with-bg.html.twig' %}
+{% elseif content.field_pricing_style.0['#markup'] in 'without-border' %}
+    {% include '@business_plus/paragraph/pricing/pricing-without-border.html.twig' %}
+{% elseif content.field_pricing_style.0['#markup'] in 'border-primary' %}
+    {% include '@business_plus/paragraph/pricing/pricing-with-border-primary.html.twig' %}    
+{% else %}
+    {% include '@business_plus/paragraph/pricing/pricing.html.twig' %}
+{% endif %}
+
+

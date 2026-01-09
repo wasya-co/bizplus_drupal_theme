@@ -1,0 +1,12 @@
+
+#header-1 ul.navbar-nav.my-main-menu {
+  /* border: 1px solid red; */
+
+  display: flex;
+  justify-content: flex-end;
+
+  > li.nav-item {
+    margin-right: 1em;
+  }
+}
+

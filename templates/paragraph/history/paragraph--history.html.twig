@@ -1,0 +1,20 @@
+<section class="page-history">
+    <div class="container">
+        <div class="page-historyblock">
+            <div class="img-wrapper">
+                <img src="{{file_url(content.field_image['#items'].entity.uri.value)}}" alt="History-Image"/>    
+            </div>
+            <div class="content-divider">
+                <span>{{content.field_tagline.0}}</span>
+                <span class="divider-line"></span>
+                <div class="milestones-wrapper">
+                    <h2>{{content.field_title.0}}</h2>
+                    <div class="milestones-details">
+                        {{content.field_history_contents }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    

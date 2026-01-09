@@ -1,0 +1,30 @@
+<form {{ attributes }}>
+    <div class="row">
+        <div class="col-md-6">
+            {{element.elements.name}}
+        </div>
+        <div class="col-md-6">
+            {{element.elements.mail}}
+        </div>
+        <div class="col-md-6">
+            {{element.elements.phone_number}}
+        </div>
+        <div class="col-md-6">
+            <div class="select-option">
+                {{element.elements.role}}   
+                <svg xmlns="http://www.w3.org/2000/svg" width="300" height="150" viewBox="0 0 300 150">
+                    <path data-name="Path 39247" d="M178.588,198.21a3.55,3.55,0,0,0-3.278,2.158,3.358,3.358,0,0,0,.783,3.756L322.583,347.168a3.623,3.623,0,0,0,2.494,1.042,3.5,3.5,0,0,0,2.494-1.042L473.984,204.2a3.42,3.42,0,0,0,.783-3.828,3.554,3.554,0,0,0-3.278-2.156Z" transform="translate(-175.039 -198.21)" fill="#111"></path>
+                </svg>
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="upload-file">
+                {{element.elements.cv}}
+            </div>
+        </div>
+            {{element.elements.actions}}
+    </div>
+    {{ element.form_token }}
+    {{ element.form_build_id }}
+    {{ element.form_id }}
+</form>

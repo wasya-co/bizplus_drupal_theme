@@ -1,0 +1,34 @@
+<section class="Page-mission-vision">
+    <div class="container">
+        <div class="Page-mission-block">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="img-wrapper">
+                        <img src="{{file_url(content.field_image['#items'].entity.uri.value)}}" alt="About-Image"/>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="content-wrapper">
+                        <h3>{{content.field_mission_title.0}}</h3>
+                        {{content.field_mission.0}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="Page-vision-block">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="content-wrapper">
+                        <h3>{{content.field_vision_title.0}}</h3>
+                        {{content.field_vision.0}}
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="img-wrapper">
+                        <img src="{{file_url(content.field_vision_image['#items'].entity.uri.value)}}" alt="About-Image"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

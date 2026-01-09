@@ -1,0 +1,128 @@
+{% if content.field_layout.0['#markup'] == 'sidebar' %}
+    <section class="portfolio-details-sidebar">
+        <div class="container">
+            <div class="portfolio-details-sidebar-block">
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="row">
+                            {% for item in node.field_multiple_images %}
+                            <div class="col-sm-6">
+                                <div class="img-wrapper">
+                                    <img src="{{file_url(item.entity.uri.value)}}" alt="Portfolio Image"/>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                        <div class="details-wrapper">
+                            <h2 class="portfolio-sun-title">{{content.field_sub_title.0}}</h2>
+                            <div class="para-wrapper">
+                                {{content.body.0}}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="sidebar">
+                            <div class="details-list">
+                                <h3>{{content.field_details_title.0}}</h3>
+                                <ul class="list-unstyled">
+                                    <li>
+                                        <h5>Client</h5>
+                                        <p>{{content.field_client.0}}</p>
+                                    </li>
+                                    <li>
+                                        <h5>Category</h5>
+                                        {% for key,value in node.field_portfolio_category.value %}
+                                            <p>{{content.field_portfolio_category[key]}}</p>
+                                        {% endfor %}
+                                    </li>
+                                    <li>
+                                        <h5>Services</h5>
+                                        <p>{{content.field_service.0}}</p>
+                                    </li>
+                                    <li>
+                                        <h5>Published Date</h5>
+                                        <p>{{date}}</p>
+                                    </li>
+                                    <li>
+                                        <h5>Website</h5>
+                                        <p><a class="portfolio-webside-title" href="{{content.field_website.0['#url']}}" title="{{content.field_website.0['#title']}}" target="_blank">{{content.field_website.0['#title']}}</a></p>
+                                    </li>
+                                </ul>
+                                {{ share }}
+                                {# <div class="social-icons">
+                                    {{content.addtoany}}
+                                </div> #}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr class="m-0"/>
+    </section>            
+{% else %}
+    <section class="portfolio-detailsfull">
+        <div class="container">
+            <div class="portfolio-detailsfull-block">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="img-wrapper">
+                            <img src="{{file_url(content.field_image['#items'].entity.uri.value)}}" alt="Portfolio-Image"/>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="row">
+                            {% for item in node.field_multiple_images %}
+                            <div class="col-sm-6">
+                                <div class="img-wrapper">                       
+                                    <img src="{{file_url(item.entity.uri.value)}}" alt="Portfolio-Image"/>                                       
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                <div class="details-wrapper">
+                    <h2 class="portfolio-sun-title">{{content.field_sub_title.0}}</h2>
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="para-wrapper">
+                                {{content.body.0}}
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="details-list">
+                                <ul class="list-unstyled">
+                                    <li>
+                                        <h5>Client</h5>
+                                        <p>{{content.field_client.0}}</p>
+                                    </li>
+                                    <li>
+                                        <h5>Categorqy</h5>
+                                        {# {% for key,value in node.field_portfolio_category.value %} #}
+                                            <p>{{content.field_portfolio_category[0]}}</p>
+                                        {# {% endfor %} #}
+                                    </li>
+                                    <li>
+                                        <h5>Services</h5>
+                                        <p>{{content.field_service.0}}</p>
+                                    </li>
+                                    <li>
+                                        <h5>Published Date</h5>
+                                        <p>{{date}}</p>
+                                    </li>
+                                    <li>
+                                        <h5>Website</h5>
+                                        <p><a class="portfolio-webside-title" href="{{content.field_website.0['#url']}}" title="{{content.field_website.0['#title']}}" target="_blank">{{content.field_website.0['#title']}}</a></p>
+                                    </li>
+                                </ul>
+                                {{ share }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <hr class="m-0">
+    </section> 
+{% endif %}

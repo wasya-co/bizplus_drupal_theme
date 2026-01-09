@@ -1,0 +1,36 @@
+
+    {% if content.field_style_varient[0]['#markup']== 'style1' %}
+    <div class="col-4 counter-sub1">
+        <div class="counter-content">
+            <p><span data-purecounter-start="0" data-purecounter-end="12" class="purecounter">{{content.field_count.0}}</span>{{content.field_count_value.0}}</p>
+            <p>{{content.field_title.0}}</p>
+        </div>
+        <svg xmlns="http://www.w3.org/2000/svg" width="210" height="210" viewBox="0 0 210 210">
+            <rect data-name="Rectangle 284" width="210" height="210" rx="105" fill="#5bbbf4" opacity="0.8"/>
+        </svg>
+    </div>
+        
+    {% elseif content.field_style_varient[0]['#markup']== "style2" %}
+        <div class="col-4 counter-sub2">
+            <div class="counter-content">
+                <p><span data-purecounter-start="0" data-purecounter-end="65" class="purecounter">{{content.field_count.0}}</span>{{content.field_count_value.0}}</p>
+                <p>{{content.field_title.0}}</p>
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="260" height="260" viewBox="0 0 260 260">
+                <rect data-name="Rectangle 283" width="260" height="260" rx="130" fill="#93dbbf"/>
+            </svg>
+        </div>
+    
+    {% else %}
+        <div class="col-4 counter-sub3">
+            <div class="counter-content">
+                <p><span data-purecounter-start="0" data-purecounter-end="45" class="purecounter">{{content.field_count.0}}</span>{{content.field_count_value.0}}</p>
+                <p>{{content.field_title.0}}</p>
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="180" height="180" viewBox="0 0 180 180">
+                <rect data-name="Rectangle 282" width="180" height="180" rx="90" fill="#af72f4" opacity="0.8"/>
+            </svg>
+        </div>
+    
+  {% endif %}
+ 

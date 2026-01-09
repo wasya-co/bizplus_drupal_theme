@@ -1,0 +1,16 @@
+{% if content.field_team_style.0['#markup'] in 'about-page-team' %}
+<section class="home3 home3-team page-about-team">
+{% else %}
+<section class="home3 home3-team">
+{% endif %}
+    <div class="container">
+        <div class="home3-team-block">
+            <div class="text-center aos-init" data-aos="zoom-in">
+                <h2>{{content.field_title.0}}</h2>
+                {{content.field_description.0}}
+            </div>
+            {{content.field_team_style_3}} 
+            <a href="{{content.field_button_link.0['#url']}}" title="View More" class="btn btn-primary top-btn">{{content.field_button_link.0['#title']}}</a>
+        </div>
+    </div>
+</section>   

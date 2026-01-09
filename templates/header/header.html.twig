@@ -1,0 +1,369 @@
+
+{#
+  Default header_variation is 'header-1'
+  Setting the variation had no effect at all.
+#}
+{# <header id="{{ header_variation }}" class="pt-header"> #}
+<header id="{{ 'header-1' }}" class="pt-header">
+    <div class="header_type header header-1 active">
+    {% if sticky  %}
+        <div class="nav-sticky navigation-sticky">
+    {% else %}
+        <div class="nav-sticky ">
+    {% endif %}
+            <div class="container">
+                <nav class="navbar navbar-expand-lg">
+                    <div class="container-fluid">
+                        {% if page.header %}
+                            {{page.header}}
+                        {% endif %}
+                        <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#headernavbar-1">
+                            <svg class="hamber-icon" xmlns="http://www.w3.org/2000/svg" width="242" height="149" viewBox="0 0 242 149">
+                                <g data-name="Group 40024" transform="translate(10289 16472)">
+                                <rect data-name="Rectangle 249" width="242" height="19" transform="translate(-10289 -16472)" fill="#111"/>
+                                <rect data-name="Rectangle 250" width="242" height="19" transform="translate(-10289 -16407)" fill="#111"/>
+                                <rect data-name="Rectangle 251" width="242" height="19" transform="translate(-10289 -16342)" fill="#111"/>
+                                </g>
+                            </svg>
+                            <svg class="close-icon dnone" xmlns="http://www.w3.org/2000/svg" width="90.583" height="90.588" viewBox="0 0 90.583 90.588">
+                                <g data-name="Group 40199" transform="translate(12865.792 17231.002)">
+                                    <path data-name="Path 39630" d="M200.987,130.984a45.35,45.35,0,0,0,0,64.064,45.3,45.3,0,0,0,64.087,0,45.308,45.308,0,1,0-64.087-64.063ZM260.7,190.673a39.12,39.12,0,0,1-55.334-55.314,39.255,39.255,0,0,1,55.333,0,39.318,39.318,0,0,1,0,55.314Z" transform="translate(-13053.531 -17348.744)" fill="#fff"></path>
+                                    <path data-name="Path 39631" d="M319.494,216.72l-14.072,14.072L291.351,216.72l-4.635,4.635,14.072,14.072L286.716,249.5l4.635,4.635,14.072-14.072,14.072,14.072,4.635-4.635-14.071-14.072,14.071-14.072Z" transform="translate(-13125.925 -17421.145)" fill="#fff"></path>
+                                </g>
+                            </svg>
+                        </button>
+                        <div class="collapse navbar-collapse" id="headernavbar-1">
+                            {% if page.primary_menu %}
+                            {{ page.primary_menu }}
+                            {% endif %}
+                        </div>
+                        {# <div class="list-unstyled search-language">
+                            <div class="search">
+                                <a href="#" title="search" role="button" id="searchdropdown1" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="150" height="150.015" viewBox="0 0 150 150.015">
+                                        <path data-name="Path 39004" d="M251.566,97.945a63.625,63.625,0,0,0-48.147,105.237L165.2,241.471l6.488,6.489,38.244-38.289A63.624,63.624,0,1,0,251.568,97.945Zm38.495,102.048a54.109,54.109,0,1,1,16.095-38.506A54.452,54.452,0,0,1,290.061,199.993Z" transform="translate(-165.199 -97.945)" fill="#111"/>
+                                    </svg>
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="searchdropdown1">
+                                    <form action="{{base_path}}search/node" method="get">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" placeholder="Search" aria-describedby="search-value" name="keys">
+                                            <button class="btn btn-primary" type="submit" id="search-value">Search</button>
+                                        </div>
+                                        <button type="button" class="close">
+                                            <svg class="svg-close" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
+                                                <path d="M12.412,9l5.117-5.117a1.609,1.609,0,0,0,0-2.275L16.392.471a1.609,1.609,0,0,0-2.275,0L9,5.588,3.883.471a1.609,1.609,0,0,0-2.275,0L.471,1.608a1.609,1.609,0,0,0,0,2.275L5.588,9,.471,14.117a1.609,1.609,0,0,0,0,2.275l1.137,1.137a1.609,1.609,0,0,0,2.275,0L9,12.412l5.117,5.117a1.609,1.609,0,0,0,2.275,0l1.137-1.137a1.609,1.609,0,0,0,0-2.275Z" fill="#111"></path>
+                                            </svg>
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                            {{ page.language }}
+                        </div> #}
+                        {# <button class="navbar-toggler collapsed sidebar" type="button" data-bs-toggle="collapse" data-bs-target="#sidebar-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="242" height="149" viewBox="0 0 242 149">
+                                <g data-name="Group 40024" transform="translate(10289 16472)">
+                                <rect data-name="Rectangle 249" width="242" height="19" transform="translate(-10289 -16472)" fill="#111"/>
+                                <rect data-name="Rectangle 250" width="242" height="19" transform="translate(-10289 -16407)" fill="#111"/>
+                                <rect data-name="Rectangle 251" width="242" height="19" transform="translate(-10289 -16342)" fill="#111"/>
+                                </g>
+                            </svg>
+                        </button> #}
+                        <div class="side-footer collapse" id="sidebar-1">
+                            <div class="side-close">
+                                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#sidebar-1" aria-expanded="true">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="90.583" height="90.588" viewBox="0 0 90.583 90.588">
+                                        <g data-name="Group 40199" transform="translate(12865.792 17231.002)">
+                                            <path data-name="Path 39630" d="M200.987,130.984a45.35,45.35,0,0,0,0,64.064,45.3,45.3,0,0,0,64.087,0,45.308,45.308,0,1,0-64.087-64.063ZM260.7,190.673a39.12,39.12,0,0,1-55.334-55.314,39.255,39.255,0,0,1,55.333,0,39.318,39.318,0,0,1,0,55.314Z" transform="translate(-13053.531 -17348.744)" fill="#fff"></path>
+                                            <path data-name="Path 39631" d="M319.494,216.72l-14.072,14.072L291.351,216.72l-4.635,4.635,14.072,14.072L286.716,249.5l4.635,4.635,14.072-14.072,14.072,14.072,4.635-4.635-14.071-14.072,14.071-14.072Z" transform="translate(-13125.925 -17421.145)" fill="#fff"></path>
+                                        </g>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="about">
+                                <h3>{{offcanvas_title}}</h3>
+                                <p>{{offcanvas_discription}}</p>
+                            </div>
+                            <div class="Contact">
+                                <h3>Contact Us</h3>
+                                <ul class="list-unstyled">
+                                    <li class="address">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="114" height="150" viewBox="0 0 114 150">
+                                            <path data-name="Path 39253" d="M249.5,17.5A57.393,57.393,0,0,0,209.2,33.974,55.877,55.877,0,0,0,192.5,73.747c0,39.623,50.667,89.81,52.5,91.935a6.393,6.393,0,0,0,8.931,0c1.9-2.125,52.567-52.312,52.567-91.935a55.876,55.876,0,0,0-16.694-39.773A57.394,57.394,0,0,0,249.5,17.5Zm0,75a19.134,19.134,0,0,1-13.436-5.491,18.577,18.577,0,0,1,0-26.517,19.184,19.184,0,0,1,26.872,0,18.578,18.578,0,0,1,0,26.517A19.134,19.134,0,0,1,249.5,92.5Z" transform="translate(-192.502 -17.5)" fill="#111"/>
+                                        </svg>
+                                        <p>{{address}}</p>
+                                    </li>
+                                    <li>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="136.363" height="150" viewBox="0 0 136.363 150">
+                                            <path data-name="Path 39254" d="M181.343,149.65a60.345,60.345,0,0,1-27.148-11.443,154.045,154.045,0,0,1-25.527-23.457c-9.388-10.5-18.948-20.861-27.233-32.44-6.522-9.3-12.355-19.046-15.538-30.25A49.839,49.839,0,0,1,84.206,29.97c1.434-8.834,5.9-16.018,12.025-22.032a51.5,51.5,0,0,1,8.184-6.254,10.148,10.148,0,0,1,11.581.2A43.078,43.078,0,0,1,133.7,24.09a8.371,8.371,0,0,1,.639,4.186,8.257,8.257,0,0,1-1.485,3.943c-2.05,2.895-4.185,5.714-6.249,8.609-1.821,2.564-3.712,5.084-5.332,7.783h0a7.441,7.441,0,0,0,.071,8.4c4.085,6,8.04,12.178,12.484,17.892a223.324,223.324,0,0,0,26.6,28.841c2.15,1.934,4.457,3.645,6.751,5.4a6.308,6.308,0,0,0,3.383,1.4,6.223,6.223,0,0,0,3.568-.735,77.416,77.416,0,0,0,7.167-4.2c3.21-2.145,6.364-4.349,9.517-6.463a8.055,8.055,0,0,1,8.743-.18,43.555,43.555,0,0,1,18.919,19.5,12.452,12.452,0,0,1,1.513,6.97,12.312,12.312,0,0,1-2.544,6.633c-7.926,10.888-18.059,17.607-31.533,17.907a42.562,42.562,0,0,1-4.572-.315Z" transform="translate(-83.664 0.035)" fill="#111"/>
+                                        </svg>
+                                        <a href="tel:{{phone}}" title="Call To">{{phone}}</a>
+                                    </li>
+                                    <li>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="183.334" height="150" viewBox="0 0 183.334 150">
+                                            <path data-name="Icon ionic-md-mail" d="M168.122,5.625H19.711c-9.6,0-17.461,8.181-17.461,18.182V137.443c0,10,7.857,18.182,17.461,18.182H168.122c9.6,0,17.461-8.181,17.461-18.182V23.807C185.583,13.806,177.727,5.625,168.122,5.625ZM165.94,44.262l-72.024,50-72.024-50V26.08l72.024,50,72.024-50Z" transform="translate(-2.25 -5.625)" fill="#111"/>
+                                        </svg>
+                                        <a href="mailto:{{email}}" title="Mail TO">{{email}}</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="connect">
+                                {% if page.footer_third %}
+                                    {{page.footer_third}}
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+    <!-- Header-1 End -->
+    <!-- Header-2 Start -->
+<header id="header-2" class="pt-header">
+    <div class=" header_type header header-2">
+    {% if sticky  %}
+        <div class="nav-sticky navigation-sticky">
+    {% else %}
+        <div class="nav-sticky ">
+    {% endif %}
+            <div class="container">
+                <nav class="navbar navbar-expand-lg">
+                    <div class="container-fluid">
+                        {% if page.header %}
+                            {{page.header}}
+                        {% endif %}
+                        <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#headernavbar-2">
+                            <svg class="hamber-icon" xmlns="http://www.w3.org/2000/svg" width="242" height="149" viewBox="0 0 242 149">
+                                <g data-name="Group 40024" transform="translate(10289 16472)">
+                                <rect data-name="Rectangle 249" width="242" height="19" transform="translate(-10289 -16472)" fill="#111"/>
+                                <rect data-name="Rectangle 250" width="242" height="19" transform="translate(-10289 -16407)" fill="#111"/>
+                                <rect data-name="Rectangle 251" width="242" height="19" transform="translate(-10289 -16342)" fill="#111"/>
+                                </g>
+                            </svg>
+                            <svg class="close-icon dnone" xmlns="http://www.w3.org/2000/svg" width="90.583" height="90.588" viewBox="0 0 90.583 90.588">
+                                <g data-name="Group 40199" transform="translate(12865.792 17231.002)">
+                                    <path data-name="Path 39630" d="M200.987,130.984a45.35,45.35,0,0,0,0,64.064,45.3,45.3,0,0,0,64.087,0,45.308,45.308,0,1,0-64.087-64.063ZM260.7,190.673a39.12,39.12,0,0,1-55.334-55.314,39.255,39.255,0,0,1,55.333,0,39.318,39.318,0,0,1,0,55.314Z" transform="translate(-13053.531 -17348.744)" fill="#fff"></path>
+                                    <path data-name="Path 39631" d="M319.494,216.72l-14.072,14.072L291.351,216.72l-4.635,4.635,14.072,14.072L286.716,249.5l4.635,4.635,14.072-14.072,14.072,14.072,4.635-4.635-14.071-14.072,14.071-14.072Z" transform="translate(-13125.925 -17421.145)" fill="#fff"></path>
+                                </g>
+                            </svg>
+                        </button>
+                        <div class="collapse navbar-collapse" id="headernavbar-2">
+                            {% if page.primary_menu %}
+                            {{page.primary_menu}}
+                            {% endif %}
+                        </div>
+                        <div class="list-unstyled search-language">
+                            <div class="search">
+                                <a href="#" title="search" role="button" id="searchdropdown2" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="150" height="150.015" viewBox="0 0 150 150.015">
+                                        <path data-name="Path 39004" d="M251.566,97.945a63.625,63.625,0,0,0-48.147,105.237L165.2,241.471l6.488,6.489,38.244-38.289A63.624,63.624,0,1,0,251.568,97.945Zm38.495,102.048a54.109,54.109,0,1,1,16.095-38.506A54.452,54.452,0,0,1,290.061,199.993Z" transform="translate(-165.199 -97.945)" fill="#111"/>
+                                    </svg>
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="searchdropdown2">
+                                    <form action="{{base_path}}search/node" method="get">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" placeholder="Search" aria-describedby="search-value2" name="keys">
+                                            <button class="btn btn-primary" type="submit" id="search-value2">Search</button>
+                                        </div>
+                                        <button type="button" class="close">
+                                            <svg class="svg-close" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
+                                                <path d="M12.412,9l5.117-5.117a1.609,1.609,0,0,0,0-2.275L16.392.471a1.609,1.609,0,0,0-2.275,0L9,5.588,3.883.471a1.609,1.609,0,0,0-2.275,0L.471,1.608a1.609,1.609,0,0,0,0,2.275L5.588,9,.471,14.117a1.609,1.609,0,0,0,0,2.275l1.137,1.137a1.609,1.609,0,0,0,2.275,0L9,12.412l5.117,5.117a1.609,1.609,0,0,0,2.275,0l1.137-1.137a1.609,1.609,0,0,0,0-2.275Z" fill="#111"></path>
+                                            </svg>
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                            {{ page.language }}
+                        </div>
+                        <button class="navbar-toggler collapsed sidebar" type="button" data-bs-toggle="collapse" data-bs-target="#sidebar-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="242" height="149" viewBox="0 0 242 149">
+                                <g data-name="Group 40024" transform="translate(10289 16472)">
+                                <rect data-name="Rectangle 249" width="242" height="19" transform="translate(-10289 -16472)" fill="#111"/>
+                                <rect data-name="Rectangle 250" width="242" height="19" transform="translate(-10289 -16407)" fill="#111"/>
+                                <rect data-name="Rectangle 251" width="242" height="19" transform="translate(-10289 -16342)" fill="#111"/>
+                                </g>
+                            </svg>
+                        </button>
+                        <div class="side-footer collapse" id="sidebar-2">
+                            <div class="side-close">
+                                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#sidebar-2" aria-expanded="true">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="90.583" height="90.588" viewBox="0 0 90.583 90.588">
+                                        <g data-name="Group 40199" transform="translate(12865.792 17231.002)">
+                                            <path data-name="Path 39630" d="M200.987,130.984a45.35,45.35,0,0,0,0,64.064,45.3,45.3,0,0,0,64.087,0,45.308,45.308,0,1,0-64.087-64.063ZM260.7,190.673a39.12,39.12,0,0,1-55.334-55.314,39.255,39.255,0,0,1,55.333,0,39.318,39.318,0,0,1,0,55.314Z" transform="translate(-13053.531 -17348.744)" fill="#fff"></path>
+                                            <path data-name="Path 39631" d="M319.494,216.72l-14.072,14.072L291.351,216.72l-4.635,4.635,14.072,14.072L286.716,249.5l4.635,4.635,14.072-14.072,14.072,14.072,4.635-4.635-14.071-14.072,14.071-14.072Z" transform="translate(-13125.925 -17421.145)" fill="#fff"></path>
+                                        </g>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="about">
+                                <h3>{{offcanvas_title}}</h3>
+                                <p>{{offcanvas_discription}}</p>
+                            </div>
+                            <div class="Contact">
+                                <h3>Contact Us</h3>
+                                <ul class="list-unstyled">
+                                    <li class="address">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="114" height="150" viewBox="0 0 114 150">
+                                            <path data-name="Path 39253" d="M249.5,17.5A57.393,57.393,0,0,0,209.2,33.974,55.877,55.877,0,0,0,192.5,73.747c0,39.623,50.667,89.81,52.5,91.935a6.393,6.393,0,0,0,8.931,0c1.9-2.125,52.567-52.312,52.567-91.935a55.876,55.876,0,0,0-16.694-39.773A57.394,57.394,0,0,0,249.5,17.5Zm0,75a19.134,19.134,0,0,1-13.436-5.491,18.577,18.577,0,0,1,0-26.517,19.184,19.184,0,0,1,26.872,0,18.578,18.578,0,0,1,0,26.517A19.134,19.134,0,0,1,249.5,92.5Z" transform="translate(-192.502 -17.5)" fill="#111"/>
+                                        </svg>
+                                        <p>{{address}}</p>
+                                    </li>
+                                    <li>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="136.363" height="150" viewBox="0 0 136.363 150">
+                                            <path data-name="Path 39254" d="M181.343,149.65a60.345,60.345,0,0,1-27.148-11.443,154.045,154.045,0,0,1-25.527-23.457c-9.388-10.5-18.948-20.861-27.233-32.44-6.522-9.3-12.355-19.046-15.538-30.25A49.839,49.839,0,0,1,84.206,29.97c1.434-8.834,5.9-16.018,12.025-22.032a51.5,51.5,0,0,1,8.184-6.254,10.148,10.148,0,0,1,11.581.2A43.078,43.078,0,0,1,133.7,24.09a8.371,8.371,0,0,1,.639,4.186,8.257,8.257,0,0,1-1.485,3.943c-2.05,2.895-4.185,5.714-6.249,8.609-1.821,2.564-3.712,5.084-5.332,7.783h0a7.441,7.441,0,0,0,.071,8.4c4.085,6,8.04,12.178,12.484,17.892a223.324,223.324,0,0,0,26.6,28.841c2.15,1.934,4.457,3.645,6.751,5.4a6.308,6.308,0,0,0,3.383,1.4,6.223,6.223,0,0,0,3.568-.735,77.416,77.416,0,0,0,7.167-4.2c3.21-2.145,6.364-4.349,9.517-6.463a8.055,8.055,0,0,1,8.743-.18,43.555,43.555,0,0,1,18.919,19.5,12.452,12.452,0,0,1,1.513,6.97,12.312,12.312,0,0,1-2.544,6.633c-7.926,10.888-18.059,17.607-31.533,17.907a42.562,42.562,0,0,1-4.572-.315Z" transform="translate(-83.664 0.035)" fill="#111"/>
+                                        </svg>
+                                        <a href="tel:{{phone}}" title="Call To">{{phone}}</a>
+                                    </li>
+                                    <li>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="183.334" height="150" viewBox="0 0 183.334 150">
+                                            <path data-name="Icon ionic-md-mail" d="M168.122,5.625H19.711c-9.6,0-17.461,8.181-17.461,18.182V137.443c0,10,7.857,18.182,17.461,18.182H168.122c9.6,0,17.461-8.181,17.461-18.182V23.807C185.583,13.806,177.727,5.625,168.122,5.625ZM165.94,44.262l-72.024,50-72.024-50V26.08l72.024,50,72.024-50Z" transform="translate(-2.25 -5.625)" fill="#111"/>
+                                        </svg>
+                                        <a href="mailto:{{email}}" title="Mail TO">{{email}}</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="connect">
+                                {% if page.footer_third %}
+                                    {{page.footer_third}}
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+    <!-- Header-2 End -->
+    <!-- Header-3 Start -->
+<header id="header-3" class="pt-header">
+    <div class=" header_type header header-3">
+        <div class="header-top">
+            <div class="container">
+                <div class="header-contact">
+                    <div class="header-link">
+                        <a href="tel:+{{contacts}}" title="Call To">{{contacts}}</a>
+                        <a href="mailto:{{email}}" title="Mail TO">{{email}}</a>
+                    </div>
+                    {{ page.language }}
+                </div>
+            </div>
+        </div>
+    {% if sticky  %}
+        <div class="nav-sticky navigation-sticky">
+    {% else %}
+        <div class="nav-sticky ">
+    {% endif %}
+            <div class="container">
+                <nav class="navbar navbar-expand-lg">
+                    <div class="container-fluid">
+                        {% if page.header %}
+                            {{page.header}}
+                        {% endif %}
+                        <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#headernavbar-3">
+                            <svg class="hamber-icon" xmlns="http://www.w3.org/2000/svg" width="242" height="149" viewBox="0 0 242 149">
+                                <g data-name="Group 40024" transform="translate(10289 16472)">
+                                <rect data-name="Rectangle 249" width="242" height="19" transform="translate(-10289 -16472)" fill="#111"/>
+                                <rect data-name="Rectangle 250" width="242" height="19" transform="translate(-10289 -16407)" fill="#111"/>
+                                <rect data-name="Rectangle 251" width="242" height="19" transform="translate(-10289 -16342)" fill="#111"/>
+                                </g>
+                            </svg>
+                            <svg class="close-icon dnone" xmlns="http://www.w3.org/2000/svg" width="90.583" height="90.588" viewBox="0 0 90.583 90.588">
+                                <g data-name="Group 40199" transform="translate(12865.792 17231.002)">
+                                    <path data-name="Path 39630" d="M200.987,130.984a45.35,45.35,0,0,0,0,64.064,45.3,45.3,0,0,0,64.087,0,45.308,45.308,0,1,0-64.087-64.063ZM260.7,190.673a39.12,39.12,0,0,1-55.334-55.314,39.255,39.255,0,0,1,55.333,0,39.318,39.318,0,0,1,0,55.314Z" transform="translate(-13053.531 -17348.744)" fill="#fff"></path>
+                                    <path data-name="Path 39631" d="M319.494,216.72l-14.072,14.072L291.351,216.72l-4.635,4.635,14.072,14.072L286.716,249.5l4.635,4.635,14.072-14.072,14.072,14.072,4.635-4.635-14.071-14.072,14.071-14.072Z" transform="translate(-13125.925 -17421.145)" fill="#fff"></path>
+                                </g>
+                            </svg>
+                        </button>
+                        <div class="collapse navbar-collapse" id="headernavbar-3">
+                            {% if page.primary_menu %}
+                                {{ page.primary_menu }}
+                            {% endif %}
+                        </div>
+                        <div class="list-unstyled search-language">
+                            <div class="search">
+                                <a href="#" title="search" role="button" id="searchdropdown3" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="150" height="150.015" viewBox="0 0 150 150.015">
+                                        <path data-name="Path 39004" d="M251.566,97.945a63.625,63.625,0,0,0-48.147,105.237L165.2,241.471l6.488,6.489,38.244-38.289A63.624,63.624,0,1,0,251.568,97.945Zm38.495,102.048a54.109,54.109,0,1,1,16.095-38.506A54.452,54.452,0,0,1,290.061,199.993Z" transform="translate(-165.199 -97.945)" fill="#111"/>
+                                    </svg>
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="searchdropdown3">
+                                    <form action="{{base_path}}search/node" method="get">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" placeholder="Search" aria-describedby="search-value3" name="keys">
+                                            <button class="btn btn-primary" type="submit" id="search-value3">Search</button>
+                                        </div>
+                                        <button type="button" class="close">
+                                            <svg class="svg-close" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
+                                                <path d="M12.412,9l5.117-5.117a1.609,1.609,0,0,0,0-2.275L16.392.471a1.609,1.609,0,0,0-2.275,0L9,5.588,3.883.471a1.609,1.609,0,0,0-2.275,0L.471,1.608a1.609,1.609,0,0,0,0,2.275L5.588,9,.471,14.117a1.609,1.609,0,0,0,0,2.275l1.137,1.137a1.609,1.609,0,0,0,2.275,0L9,12.412l5.117,5.117a1.609,1.609,0,0,0,2.275,0l1.137-1.137a1.609,1.609,0,0,0,0-2.275Z" fill="#111"></path>
+                                            </svg>
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="navbar-toggler collapsed sidebar" type="button" data-bs-toggle="collapse" data-bs-target="#sidebar-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="242" height="149" viewBox="0 0 242 149">
+                                <g data-name="Group 40024" transform="translate(10289 16472)">
+                                <rect data-name="Rectangle 249" width="242" height="19" transform="translate(-10289 -16472)" fill="#111"/>
+                                <rect data-name="Rectangle 250" width="242" height="19" transform="translate(-10289 -16407)" fill="#111"/>
+                                <rect data-name="Rectangle 251" width="242" height="19" transform="translate(-10289 -16342)" fill="#111"/>
+                                </g>
+                            </svg>
+                        </button>
+
+                        <div class="side-footer collapse" id="sidebar-3">
+                            <div class="side-close">
+                                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#sidebar-3" aria-expanded="true">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="90.583" height="90.588" viewBox="0 0 90.583 90.588">
+                                        <g data-name="Group 40199" transform="translate(12865.792 17231.002)">
+                                            <path data-name="Path 39630" d="M200.987,130.984a45.35,45.35,0,0,0,0,64.064,45.3,45.3,0,0,0,64.087,0,45.308,45.308,0,1,0-64.087-64.063ZM260.7,190.673a39.12,39.12,0,0,1-55.334-55.314,39.255,39.255,0,0,1,55.333,0,39.318,39.318,0,0,1,0,55.314Z" transform="translate(-13053.531 -17348.744)" fill="#fff"></path>
+                                            <path data-name="Path 39631" d="M319.494,216.72l-14.072,14.072L291.351,216.72l-4.635,4.635,14.072,14.072L286.716,249.5l4.635,4.635,14.072-14.072,14.072,14.072,4.635-4.635-14.071-14.072,14.071-14.072Z" transform="translate(-13125.925 -17421.145)" fill="#fff"></path>
+                                        </g>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="about">
+                                <h3>{{offcanvas_title}}</h3>
+                                <p>{{offcanvas_discription}}</p>
+                            </div>
+                            <div class="Contact">
+                                <h3>Contact Us</h3>
+                                <ul class="list-unstyled">
+                                    <li class="address">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="114" height="150" viewBox="0 0 114 150">
+                                            <path data-name="Path 39253" d="M249.5,17.5A57.393,57.393,0,0,0,209.2,33.974,55.877,55.877,0,0,0,192.5,73.747c0,39.623,50.667,89.81,52.5,91.935a6.393,6.393,0,0,0,8.931,0c1.9-2.125,52.567-52.312,52.567-91.935a55.876,55.876,0,0,0-16.694-39.773A57.394,57.394,0,0,0,249.5,17.5Zm0,75a19.134,19.134,0,0,1-13.436-5.491,18.577,18.577,0,0,1,0-26.517,19.184,19.184,0,0,1,26.872,0,18.578,18.578,0,0,1,0,26.517A19.134,19.134,0,0,1,249.5,92.5Z" transform="translate(-192.502 -17.5)" fill="#111"/>
+                                        </svg>
+                                        <p>{{address}}</p>
+                                    </li>
+                                    <li>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="136.363" height="150" viewBox="0 0 136.363 150">
+                                            <path data-name="Path 39254" d="M181.343,149.65a60.345,60.345,0,0,1-27.148-11.443,154.045,154.045,0,0,1-25.527-23.457c-9.388-10.5-18.948-20.861-27.233-32.44-6.522-9.3-12.355-19.046-15.538-30.25A49.839,49.839,0,0,1,84.206,29.97c1.434-8.834,5.9-16.018,12.025-22.032a51.5,51.5,0,0,1,8.184-6.254,10.148,10.148,0,0,1,11.581.2A43.078,43.078,0,0,1,133.7,24.09a8.371,8.371,0,0,1,.639,4.186,8.257,8.257,0,0,1-1.485,3.943c-2.05,2.895-4.185,5.714-6.249,8.609-1.821,2.564-3.712,5.084-5.332,7.783h0a7.441,7.441,0,0,0,.071,8.4c4.085,6,8.04,12.178,12.484,17.892a223.324,223.324,0,0,0,26.6,28.841c2.15,1.934,4.457,3.645,6.751,5.4a6.308,6.308,0,0,0,3.383,1.4,6.223,6.223,0,0,0,3.568-.735,77.416,77.416,0,0,0,7.167-4.2c3.21-2.145,6.364-4.349,9.517-6.463a8.055,8.055,0,0,1,8.743-.18,43.555,43.555,0,0,1,18.919,19.5,12.452,12.452,0,0,1,1.513,6.97,12.312,12.312,0,0,1-2.544,6.633c-7.926,10.888-18.059,17.607-31.533,17.907a42.562,42.562,0,0,1-4.572-.315Z" transform="translate(-83.664 0.035)" fill="#111"/>
+                                        </svg>
+                                        <a href="tel:{{phone}}" title="Call To">{{phone}}</a>
+                                    </li>
+                                    <li>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="183.334" height="150" viewBox="0 0 183.334 150">
+                                            <path data-name="Icon ionic-md-mail" d="M168.122,5.625H19.711c-9.6,0-17.461,8.181-17.461,18.182V137.443c0,10,7.857,18.182,17.461,18.182H168.122c9.6,0,17.461-8.181,17.461-18.182V23.807C185.583,13.806,177.727,5.625,168.122,5.625ZM165.94,44.262l-72.024,50-72.024-50V26.08l72.024,50,72.024-50Z" transform="translate(-2.25 -5.625)" fill="#111"/>
+                                        </svg>
+                                        <a href="mailto:{{email}}" title="Mail TO">{{email}}</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="connect">
+                                {% if page.footer_third %}
+                                    {{page.footer_third}}
+                                {% endif %}
+                            </div>
+                        </div>
+
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <!-- Header-3 End -->
+</header>
+<!-- HEADER SECTION ENDS -->
