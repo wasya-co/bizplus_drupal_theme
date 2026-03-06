@@ -2,7 +2,7 @@
     <div class="team-area">
         <div class="full-wrapper">
             <div class="img-wrapper">
-                <img src="{{ fields.field_image.content }}" alt="{{ fields.field_image_1.content }}">
+                <img src="{{ fields.field_image.content|striptags|trim }}" alt="{{ fields.field_image_1.content }}">
             </div>
             <div class="content-wrapper">
                 <h4>{{ fields.title.content}}</h4>

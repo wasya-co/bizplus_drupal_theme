@@ -1,7 +1,7 @@
 
 <li>
     <div class="img-wrapper">
-        <a href="{{fields.view_node.content}}" title="{{fields.view_node_1.content}}"><img src="{{fields.field_image.content}}" alt="Blog-Image"/></a>
+        <a href="{{fields.view_node.content}}" title="{{fields.view_node_1.content}}"><img src="{{fields.field_image.content|striptags|trim}}" alt="Blog-Image"/></a>
     </div>
     <div class="content-wrapper">
         <h6><a href="{{fields.view_node.content}}" title="Details page">{{fields.title.content}}</a></h6>

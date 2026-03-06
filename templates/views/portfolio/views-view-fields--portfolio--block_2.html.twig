@@ -1,10 +1,10 @@
 
 <div class="col-md-4 col-sm-6">
     <div class="img-wrapper">
-        <img src="{{fields.field_image.content}}" alt="Protfolio-Image">
+        <img src="{{fields.field_image.content|striptags|trim}}" alt="Protfolio-Image">
         <div class="content-wrapper">
             <div class="up">
-                <a href="{{fields.field_image.content}}" title="Protfolio-Image" data-fancybox="">
+                <a href="{{fields.field_image.content|striptags|trim}}" title="Protfolio-Image" data-fancybox="">
                     <svg xmlns="http://www.w3.org/2000/svg" width="149.998" height="150" viewBox="0 0 149.998 150">
                         <g data-name="Group 40009" transform="translate(12396.73 12619.245)">
                             <path data-name="Path 39232" d="M175.8,30.8a75,75,0,1,0,75,75A75.085,75.085,0,0,0,175.8,30.8Zm0,143.258A68.258,68.258,0,1,1,244.058,105.8,68.335,68.335,0,0,1,175.8,174.059Z" transform="translate(-12497.53 -12650.046)" fill="#111"></path>

@@ -1,6 +1,6 @@
 
 <div class="col-md-4 col-6">
     <div class="img-wrapper">
-        <img src="{{ fields.field_image.content }}" alt="Clients-Image"/>
+        <img src="{{ fields.field_image.content|striptags|trim }}" alt="Clients-Image"/>
     </div>
 </div>

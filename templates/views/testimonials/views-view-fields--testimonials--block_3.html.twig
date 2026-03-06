@@ -1,7 +1,7 @@
 <li class="carousel-item">
     <div class="content-block">
         <div class="img-wrapper">
-            <img src="{{ fields.field_image.content }}" alt="Carousel-image"/>
+            <img src="{{ fields.field_image.content|striptags|trim }}" alt="Carousel-image"/>
         </div>
         {{fields.body.content}}
         <div class="quotes-content">

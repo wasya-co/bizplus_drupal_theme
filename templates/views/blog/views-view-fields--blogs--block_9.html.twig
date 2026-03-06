@@ -2,7 +2,7 @@
     <div class="content-block">
         <div class="img-wrapper">
             <a class="w-100" href="{{fields.view_node.content}}" title="{{fields.view_node_1.content}}">
-                <img src="{{fields.field_image.content}}" alt="{{ fields.title.content }} image">
+                <img src="{{fields.field_image.content|striptags|trim}}" alt="{{ fields.title.content }} image">
             </a>
         </div>
         <div class="content-wrapper">

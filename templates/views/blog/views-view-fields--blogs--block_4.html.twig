@@ -4,7 +4,7 @@
         <div class="content-block">
             <div class="img-wrapper" data-aos="fade-up">
                 <a href="{{fields.view_node.content}}" title="{{fields.view_node_1.content}}">
-                    <img src="{{fields.field_image.content}}" alt="Blog-image-1" />
+                    <img src="{{fields.field_image.content|striptags|trim}}" alt="Blog-image-1" />
                 </a>
             </div>
             <div class="content-wrapper" data-aos="fade-down">
