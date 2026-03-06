@@ -1,13 +1,24 @@
+
 <div class="col-md-4 col-sm-6 aos-init aos-animate" data-aos="fade-up" data-aos-duration="1200">
     <div class="img-wrapper">
-        <a class="title" href="{{ fields.view_node.content }}" title="{{ fields.view_node_1.content }}"><img src="{{ fields.field_image.content }}" alt="{{ fields.title.content }} image"></a>
+        <a class="title"
+           href="{{ fields.view_node.content|striptags|trim }}"
+           title="{{ fields.view_node_1.content|striptags|trim }}"
+        ><img src="{{ fields.field_image.content|striptags|trim }}"
+              alt="{{ fields.title.content|striptags|trim }} image"></a>
     </div>
     <div class="content-wrapper">
         <div class="svg-icon">
-            {{ fields.field_icon.content }}
+            {{ fields.field_icon.content|striptags|trim }}
         </div>
-        <h4><a class="title" href="{{ fields.view_node.content }}" title="{{ fields.title.content }}">{{ fields.title.content }}</a></h4>
-        <p>{{ fields.field_description.content|striptags }}</p>
-        <a class="read" href="{{ fields.view_node.content }}" title="{{ fields.view_node_1.content }}">{{ fields.view_node_1.content }}</a>
+        <h4><a class="title"
+               href="{{ fields.view_node.content|striptags|trim }}"
+               title="{{ fields.title.content|striptags|trim }}"
+            >{{ fields.title.content|striptags|trim }}</a></h4>
+        <p>{{ fields.field_description.content|striptags|trim }}</p>
+        <a class="read"
+           href="{{ fields.view_node.content|striptags|trim }}"
+           title="{{ fields.view_node_1.content|striptags|trim }}"
+        >{{ fields.view_node_1.content|striptags|trim }}</a>
     </div>
 </div>
