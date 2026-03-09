@@ -4,9 +4,11 @@
             {{ fields.field_icon.content }}
         </div>
         <div class="content-wrapper">
-            <h4><a class="title" href="{{ fields.view_node.content }}" title="{{ fields.title.content }}">{{ fields.title.content }}</a></h4>
-            <p>{{ fields.field_description.content|striptags }}</p>
-            <a href="{{ fields.view_node.content }}">
+            <h4><a class="title"
+                   href="{{ fields.view_node.content|striptags|trim }}"
+                   title="{{ fields.title.content }}">{{ fields.title.content }}</a></h4>
+            <p>{{ fields.field_description.content }}</p>
+            <a href="{{ fields.view_node.content|striptags|trim }}">
                 <svg xmlns="http://www.w3.org/2000/svg" width="280" height="70" viewBox="0 0 280 70">
                     <path data-name="Path 39255" d="M401.537,232.07l45.653,32.084L402.044,302.07l-.507-31.112H167.19V260.265H401.537Z" transform="translate(-167.189 -232.07)" fill="#111" fill-rule="evenodd"></path>
                 </svg>

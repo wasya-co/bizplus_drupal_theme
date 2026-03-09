@@ -1,5 +1,5 @@
 
  <li data-aos="fade-up">
-    <a href="{{ fields.view_node.content }}" title=" {{fields.title.content}}"> {{fields.title.content}}</a>
+    <a href="{{ fields.view_node.content|striptags|trim }}"
+       title=" {{fields.title.content}}"> {{fields.title.content}}</a>
  </li>
-                

@@ -2,14 +2,18 @@
 <div class="row">
     <div class="col-md-6 img-area" data-aos="fade-up">
         <div class="img-wrapper">
-            <a class="title" href="{{fields.view_node.content}}" title="Details"><img src="{{fields.field_image.content|striptags|trim}}" alt="Service Image" /></a>
+            <a class="title"
+               href="{{fields.view_node.content|striptags|trim}}"
+               title="Details"><img src="{{fields.field_image.content|striptags|trim}}" alt="Service Image" /></a>
         </div>
     </div>
     <div class="col-md-6 content-area" data-aos="fade-in" data-aos-duration="1000">
         <div class="content-wrapper">
-            <h2><a class="title" href="./service-details-sidebar.php" title="Details">{{fields.title.content}}</a></h2>
-            <p>{{fields.field_description.content|striptags}}</p>
-            <a href="{{fields.view_node.content}}">
+            <h2><a class="title"
+                   href="{{fields.view_node.content|striptags|trim}}"
+                   title="Details">{{fields.title.content}}</a></h2>
+            <p>{{fields.field_description.content}}</p>
+            <a href="{{fields.view_node.content|striptags|trim}}">
                 <svg class="long-arrow" xmlns="http://www.w3.org/2000/svg" width="280" height="70" viewBox="0 0 280 70">
                     <path data-name="Path 39255" d="M401.537,232.07l45.653,32.084L402.044,302.07l-.507-31.112H167.19V260.265H401.537Z" transform="translate(-167.189 -232.07)" fill="#111" fill-rule="evenodd"></path>
                 </svg>
