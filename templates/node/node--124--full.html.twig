@@ -1,0 +1,329 @@
+{{ attach_library('bootstrap_barrio/node') }}
+{%
+  set classes = [
+    'node',
+    'node--type-' ~ node.bundle|clean_class,
+    node.isPromoted() ? 'node--promoted',
+    node.isSticky() ? 'node--sticky',
+    not node.isPublished() ? 'node--unpublished',
+    view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+    'clearfix',
+  ]
+%}
+<article{{ attributes.addClass(classes)|without('role') }}>
+  <header>
+    {{ title_prefix }}
+    {% if label and not page %}
+      <h2{{ title_attributes.addClass('node__title') }}>
+        <a href="{{ url }}" rel="bookmark">{{ label }}</a>
+      </h2>
+    {% endif %}
+    {{ title_suffix }}
+    {% if display_submitted %}
+      <div class="node__meta">
+        {{ author_picture }}
+        {% block submitted %}
+          <em{{ author_attributes }}>
+            {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
+          </em>
+        {% endblock %}
+        {{ metadata }}
+      </div>
+    {% endif %}
+  </header>
+  <div{{ content_attributes.addClass('node__content', 'clearfix') }}>
+
+
+
+<div class='container'>
+  <div class='row'>
+    <div class='col-12'>
+      <p>Below are some of the features of the SMT platform.</p>
+    </div>
+  </div>
+</div>
+
+
+<!-- dashboard -->
+<section class="services" style="padding: 0;">
+  <div class="container">
+  <div class="services-block">
+      <div class="service4">
+          <div class="row">
+              <div class="col-md-6">
+                  <div class="img-wrapper">
+                      <a class="title"
+                        href="/features/dashboard"
+                        title="creek smt dashboard"
+                      ><img src="https://d15g8hc4183yn4.cloudfront.net/wp-content/uploads/2026/03/14134442/dashboard-1.out_.jpg" alt="creek smt dashboard"/></a>
+                  </div>
+              </div>
+              <div class="col-md-6">
+                  <div class="content-wrapper">
+                      <h2><a class="title"
+                            href="#"
+                            title="Details"
+                          >Dashboard: Bird's eye view of the data</a></h2>
+                      <p>The Dashboard offers a view of last week's, last month's, previous year's and totals - of the number of invoices, the number of estimates, grouped by type and status.</p>
+                      <a href="/features/dashboard">
+                          <svg class="long-arrow" xmlns="http://www.w3.org/2000/svg" width="280" height="70" viewBox="0 0 280 70"><path data-name="Path 39255" d="M401.537,232.07l45.653,32.084L402.044,302.07l-.507-31.112H167.19V260.265H401.537Z" transform="translate(-167.189 -232.07)" fill="#111" fill-rule="evenodd"></path></svg>
+                      </a>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  </div>
+</section>
+
+<!-- rfp's -->
+<section class="services" style="padding: 0;" >
+  <div class="container">
+    <div class="services-block">
+      <div class="service4">
+          <div class="row" style="display: flex; align-items: center;">
+
+              <div class="col-md-6">
+                  <div class="content-wrapper">
+                      <h2><a class="title"
+                             href="/features/rfps"
+                             title="Requests for Proposals: RFP's"
+                          >Requests for Proposals: RFP's</a></h2>
+                      <p>This part of the platform enables subcontractors to submit bids on well-defined requests for proposals. A managing employee then evaluates proposals and awards a contract appropriately.</p>
+                      <a href="/features/rfps">
+                          <svg class="long-arrow" xmlns="http://www.w3.org/2000/svg" width="280" height="70" viewBox="0 0 280 70"><path data-name="Path 39255" d="M401.537,232.07l45.653,32.084L402.044,302.07l-.507-31.112H167.19V260.265H401.537Z" transform="translate(-167.189 -232.07)" fill="#111" fill-rule="evenodd"></path></svg>
+                      </a>
+                  </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="img-wrapper">
+                    <a class="title"
+                       href="/features/rfps"
+                       title="Requests for Proposals: RFP's"
+                    ><img src="https://d15g8hc4183yn4.cloudfront.net/wp-content/uploads/2026/03/14134904/rfps-2.600x453.jpg"
+                          alt="Requests for Proposals: RFP's" /></a>
+                </div>
+              </div>
+
+          </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- general features -->
+<section class="services" style="padding: 0;">
+  <div class="container">
+  <div class="services-block">
+      <div class="service4">
+          <div class="row">
+              <div class="col-md-6">
+                  <div class="img-wrapper">
+                      <a class="title"
+                        href="/features/general"
+                        title="creek smt dashboard"
+                      ><img src="https://d15g8hc4183yn4.cloudfront.net/wp-content/uploads/2026/03/14175500/settings-0.600x453.jpg" alt="creek smt settings"/></a>
+                  </div>
+              </div>
+              <div class="col-md-6">
+                  <div class="content-wrapper">
+                      <h2><a class="title"
+                            href="#"
+                            title="Details"
+                          >General Features</a></h2>
+                      <p>The platform offers some common functionality across all data types, all views and all user roles.</p>
+                      <a href="/features/dashboard">
+                          <svg class="long-arrow" xmlns="http://www.w3.org/2000/svg" width="280" height="70" viewBox="0 0 280 70"><path data-name="Path 39255" d="M401.537,232.07l45.653,32.084L402.044,302.07l-.507-31.112H167.19V260.265H401.537Z" transform="translate(-167.189 -232.07)" fill="#111" fill-rule="evenodd"></path></svg>
+                      </a>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  </div>
+</section>
+
+
+<!-- reports -->
+<section class="services" style="padding: 0;" >
+  <div class="container">
+    <div class="services-block">
+      <div class="service4">
+          <div class="row" style="display: flex; align-items: center;">
+
+              <div class="col-md-6">
+                  <div class="content-wrapper">
+                      <h2><a class="title"
+                             href="/features/reports"
+                             title="Requests for Proposals: RFP's"
+                          >Reports: a clear view of the data</a></h2>
+                      <p>Admins can see multiple types of reports: by job-number, by estimate status, etc...</p>
+                      <a href="/features/rfps">
+                          <svg class="long-arrow" xmlns="http://www.w3.org/2000/svg" width="280" height="70" viewBox="0 0 280 70"><path data-name="Path 39255" d="M401.537,232.07l45.653,32.084L402.044,302.07l-.507-31.112H167.19V260.265H401.537Z" transform="translate(-167.189 -232.07)" fill="#111" fill-rule="evenodd"></path></svg>
+                      </a>
+                  </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="img-wrapper">
+                    <a class="title"
+                       href="/features/reports"
+                       title="Requests for Proposals: RFP's"
+                    ><img src="https://d15g8hc4183yn4.cloudfront.net/wp-content/uploads/2026/03/14175728/reports-0.600x453.jpg"
+                          alt="Requests for Proposals: RFP's" /></a>
+                </div>
+              </div>
+
+          </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- estimates -->
+<section class="services" style="padding: 0;">
+  <div class="container">
+  <div class="services-block">
+      <div class="service4">
+          <div class="row">
+              <div class="col-md-6">
+                  <div class="img-wrapper">
+                      <a class="title"
+                        href="/features/estimates"
+                        title="creek smt estimates"
+                      ><img src="https://d15g8hc4183yn4.cloudfront.net/wp-content/uploads/2026/03/14174410/estimates-0.600x453.jpg" alt="creek smt dashboard"/></a>
+                  </div>
+              </div>
+              <div class="col-md-6">
+                  <div class="content-wrapper">
+                      <h2><a class="title"
+                            href="#"
+                            title="Details"
+                          >Estimates: the heart of the platform</a></h2>
+                      <p>To create an invoice, a subcontractor would first create an estimate. Estimates allow contractors to communicate to regional admins and approvers, what line items (and therefore costs) are associated with each project.</p>
+                      <a href="/features/estimates">
+                          <svg class="long-arrow" xmlns="http://www.w3.org/2000/svg" width="280" height="70" viewBox="0 0 280 70"><path data-name="Path 39255" d="M401.537,232.07l45.653,32.084L402.044,302.07l-.507-31.112H167.19V260.265H401.537Z" transform="translate(-167.189 -232.07)" fill="#111" fill-rule="evenodd"></path></svg>
+                      </a>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  </div>
+</section>
+
+
+<!-- invoices -->
+<section class="services" style="padding: 0;" >
+  <div class="container">
+    <div class="services-block">
+      <div class="service4">
+          <div class="row" style="display: flex; align-items: center;">
+
+              <div class="col-md-6">
+                  <div class="content-wrapper">
+                      <h2><a class="title"
+                             href="/features/invoices"
+                             title="Invoices"
+                          >Invoices</a></h2>
+                      <p>Once an estimate is submitted, it becomes an invoices. Invoices can be paid, and statements of progress, notes, and receipts can be attached.</p>
+                      <a href="/features/rfps">
+                          <svg class="long-arrow" xmlns="http://www.w3.org/2000/svg" width="280" height="70" viewBox="0 0 280 70"><path data-name="Path 39255" d="M401.537,232.07l45.653,32.084L402.044,302.07l-.507-31.112H167.19V260.265H401.537Z" transform="translate(-167.189 -232.07)" fill="#111" fill-rule="evenodd"></path></svg>
+                      </a>
+                  </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="img-wrapper">
+                    <a class="title"
+                       href="/features/rfps"
+                       title="Invoices"
+                    ><img src="https://d15g8hc4183yn4.cloudfront.net/wp-content/uploads/2026/03/14174929/invoices-show-0.600x453.jpg"
+                          alt="invoices" /></a>
+                </div>
+              </div>
+
+          </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- pricelists -->
+<section class="services" style="padding: 0;">
+  <div class="container">
+  <div class="services-block">
+      <div class="service4">
+          <div class="row">
+              <div class="col-md-6">
+                  <div class="img-wrapper">
+                      <a class="title"
+                        href="/features/pricelists"
+                        title="creek smt pricelists"
+                      ><img src="https://d15g8hc4183yn4.cloudfront.net/wp-content/uploads/2026/03/14175957/pricelists-show-0.600x453.jpg" alt="creek smt pricelists"/></a>
+                  </div>
+              </div>
+              <div class="col-md-6">
+                  <div class="content-wrapper">
+                      <h2><a class="title"
+                            href="#"
+                            title="Details"
+                          >Pricelists</a></h2>
+                      <p>With pricelists, admins determine which line items are available per-contractor, to put on their estimates.</p>
+                      <a href="/features/dashboard">
+                          <svg class="long-arrow" xmlns="http://www.w3.org/2000/svg" width="280" height="70" viewBox="0 0 280 70"><path data-name="Path 39255" d="M401.537,232.07l45.653,32.084L402.044,302.07l-.507-31.112H167.19V260.265H401.537Z" transform="translate(-167.189 -232.07)" fill="#111" fill-rule="evenodd"></path></svg>
+                      </a>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  </div>
+</section>
+
+
+<!-- admin -->
+<section class="services" style="padding: 0;" >
+  <div class="container">
+    <div class="services-block">
+      <div class="service4">
+          <div class="row" style="display: flex; align-items: center;">
+
+              <div class="col-md-6">
+                  <div class="content-wrapper">
+                      <h2><a class="title"
+                             href="/features/admin"
+                             title="Invoices"
+                          >Admin</a></h2>
+                      <p>Admins are able to edit Customers, Job Numbers, Subcontractors, Employees, Price lists, and Regions.</p>
+                      <a href="/features/rfps">
+                          <svg class="long-arrow" xmlns="http://www.w3.org/2000/svg" width="280" height="70" viewBox="0 0 280 70"><path data-name="Path 39255" d="M401.537,232.07l45.653,32.084L402.044,302.07l-.507-31.112H167.19V260.265H401.537Z" transform="translate(-167.189 -232.07)" fill="#111" fill-rule="evenodd"></path></svg>
+                      </a>
+                  </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="img-wrapper">
+                    <a class="title"
+                       href="/features/admin"
+                       title="Invoices"
+                    ><img src="https://d15g8hc4183yn4.cloudfront.net/wp-content/uploads/2026/03/14180440/admin-customers-new-0.600x453.jpg"
+                          alt="admin" /></a>
+                </div>
+              </div>
+
+          </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+    {# {{ content }} #}
+
+  </div>
+</article>

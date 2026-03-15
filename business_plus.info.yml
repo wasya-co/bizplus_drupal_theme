@@ -1,12 +1,10 @@
 name: Business Plus
 type: theme
-version: v 1.0
-description: 'Multi purpose theme for business.'
+version: v1.0.1
+description: 'www_smt version of business_plus.'
 core_version_requirement: ^9 || ^10
 base theme: bootstrap_barrio
 
-dependencies:
-  - dt_user_statistics
 libraries:
   - business_plus/bootstrap
   - business_plus/global-styling
