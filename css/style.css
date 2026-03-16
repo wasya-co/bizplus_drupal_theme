@@ -404,14 +404,6 @@ h6 {
   line-height: 21px;
   font-weight: 500;
 }
-p {
-  font-family: var(--paragraph-font);
-  margin-bottom: 0;
-  font-size: 15px;
-  line-height: 24px;
-  font-weight: 400;
-  color: var(--paragraph-text-color);
-}
 
 input.form-control:focus {
   box-shadow: unset;
@@ -6885,7 +6877,10 @@ display: flex;
   color: var(--bs-secondary);
 }
 .nav-sticky .navbar-brand {
-  display: inline-block;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+
   width: 225px;
   height: 32px;
   padding: 0;

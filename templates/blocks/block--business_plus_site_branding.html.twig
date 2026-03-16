@@ -1,18 +1,4 @@
-{# {% extends "block.html.twig" %} #}
-{#
-/**
- * @file
- * Bartik's theme implementation for a branding block.
- *
- * Each branding element variable (logo, name, slogan) is only available if
- * enabled in the block configuration.
- *
- * Available variables:
- * - site_logo: Logo for site as defined in Appearance or theme settings.
- * - site_name: Name for site as defined in Site information settings.
- * - site_slogan: Slogan for site as defined in Site information settings.
- */
-#}
+
 {% set front_page = url('<front>') %}
 <div class="block-business-plus-site-branding">
   {% if site_name or site_slogan %}
@@ -22,7 +8,8 @@
       {% else %}
       {% if site_logo %}
         <a class="navbar-brand" href="{{ front_page }}" title="{{ 'Home'|t }}">
-          <img src="{{ site_logo }}" alt="Home" class="img-fluid">
+          <img src="{{ site_logo }}"     class="img-fluid site-logo"           alt="Home" />
+          <img src="{{ site_logo_dol }}" class="img-fluid site-logo-dol"  alt="Creek Enterprise Logo" />
         </a>
       {% endif %}
       {% endif %}
@@ -32,13 +19,15 @@
     </div>
   {% elseif site_slogan and site_logo %}
     <a class="navbar-brand" href="{{ front_page }}" title="{{ 'Home'|t }}">
-      <img src="{{ site_logo }}" alt="Home" class="img-fluid">
+      <img src="{{ site_logo }}"     class="img-fluid site-logo"           alt="Home" />
+      <img src="{{ site_logo_dol }}" class="img-fluid site-logo-dol"  alt="Creek Enterprise Logo" />
     </a>
     <div class="site-branding__slogan">{{ site_slogan }}</div>
   {% else %}
     {% if site_logo %}
       <a class="navbar-brand" href="{{ front_page }}" title="{{ 'Home'|t }}">
-        <img src="{{ site_logo }}" alt="Home" class="img-fluid">
+        <img src="{{ site_logo }}"     class="img-fluid site-logo"           alt="Home" />
+        <img src="{{ site_logo_dol }}" class="img-fluid site-logo-dol"  alt="Creek Enterprise Logo" />
       </a>
     {% else %}
       <a class="navbar-brand" href="{{ front_page }}" title="{{ 'Home'|t }}">

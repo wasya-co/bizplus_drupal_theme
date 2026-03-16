@@ -38,10 +38,12 @@ use Drupal\color\ColorSystemBrandingBlockAlter;
 
 /**
  * Implements hook_form_system_theme_settings_alter() for settings form.
- * 
+ *
  */
-function business_plus_form_system_theme_settings_alter(array &$form, FormStateInterface $form_state)
-{
+function business_plus_form_system_theme_settings_alter(array &$form, FormStateInterface $form_state) {
+
+
+
   $form['pannel_color'] = array(
     '#type' => 'details',
     '#title' => t('Color Settings'),
@@ -84,14 +86,27 @@ function business_plus_form_system_theme_settings_alter(array &$form, FormStateI
     '#title' => t('Select Secondary Color'),
     '#default_value' => theme_get_setting('secondary_color'),
   ];
-  /*Core theme  settings*/
+
+  /* Core theme  settings */
   $form['logo']['#group'] = 'visibility';
   $form['logo']['#title'] = t('Logo Image');
   $form['logo']['#weight'] = -995;
+  $form['logo']['#open'] = TRUE;
+
+  $form['site_logo_dol'] = [
+    '#type' => 'managed_file',
+    '#title' => t('Secondary logo (DOL)'),
+    '#upload_location' => 'public://theme/',
+    '#default_value' => theme_get_setting('site_logo_dol'),
+    '#upload_validators' => [
+      'file_validate_extensions' => ['png gif jpg jpeg svg'],
+    ],
+  ];
+
   $form['favicon']['#group'] = 'visibility';
   $form['favicon']['#weight'] = -994;
-  $form['logo']['#open'] = TRUE;
   $form['favicon']['#open'] = TRUE;
+
   unset($form['theme_settings']);
   unset($form['bootstrap_barrio_source']);
   $form['visibility'] = [
@@ -99,7 +114,7 @@ function business_plus_form_system_theme_settings_alter(array &$form, FormStateI
     '#prefix' => '<h2><small>' . t('Theme settings') . '</small></h2>',
     '#weight' => -999,
   ];
-  //General settings 
+  //General settings
   $form['general'] = [
     '#type' => 'details',
     '#title' => t('General Options'),
@@ -282,7 +297,7 @@ function business_plus_form_system_theme_settings_alter(array &$form, FormStateI
     '#default_value' => theme_get_setting('search_banner_title'),
     '#description'   => t("Please enter title for search result page banner."),
   );
-  // Login page 
+  // Login page
   $form['general']['login'] = array(
     '#type' => 'details',
     '#title' => t('Login Page Settings'),
@@ -315,7 +330,7 @@ function business_plus_form_system_theme_settings_alter(array &$form, FormStateI
     '#default_value' => theme_get_setting('login_title'),
     '#description'   => t("Please enter the title for Login page."),
   );
-  // Register page 
+  // Register page
   $form['general']['register'] = array(
     '#type' => 'details',
     '#title' => t('Register Page Settings'),
@@ -348,7 +363,7 @@ function business_plus_form_system_theme_settings_alter(array &$form, FormStateI
     '#default_value' => theme_get_setting('register_title'),
     '#description'   => t("Please enter the title of the Register page."),
   );
-  // Reset password page 
+  // Reset password page
   $form['general']['reset_pass'] = array(
     '#type' => 'details',
     '#title' => t('Reset Password Page Settings'),
@@ -381,7 +396,7 @@ function business_plus_form_system_theme_settings_alter(array &$form, FormStateI
     '#default_value' => theme_get_setting('reset_page_title'),
     '#description'   => t("Please enter the title of the Reset Password page."),
   );
-  // 404 and 403 page 
+  // 404 and 403 page
   $form['general']['error_page'] = array(
     '#type' => 'details',
     '#title' => t('404 and 403 Page Settings'),
@@ -453,7 +468,7 @@ function business_plus_form_system_theme_settings_alter(array &$form, FormStateI
   //   '#type'          => 'textfield',
   //   '#title'         => t('Button Text'),
   //   '#default_value' => theme_get_setting('page_403_button'),
-  //   '#description'   => t("Please enter the button (return to home page) text to be shown in 403 page."), 
+  //   '#description'   => t("Please enter the button (return to home page) text to be shown in 403 page."),
   // );
   // 404 page
   $form['general']['error_page']['404_page'] = array(
@@ -511,7 +526,7 @@ function business_plus_form_system_theme_settings_alter(array &$form, FormStateI
   //   '#type'          => 'textfield',
   //   '#title'         => t('Button Text'),
   //   '#default_value' => theme_get_setting('page_404_button'),
-  //   '#description'   => t("Please enter the button (return to home page) text to be shown in 404 page."), 
+  //   '#description'   => t("Please enter the button (return to home page) text to be shown in 404 page."),
   // );
 
   // Maintenance and coming soon Section Start
@@ -557,17 +572,6 @@ function business_plus_form_system_theme_settings_alter(array &$form, FormStateI
       'file_validate_extensions' => array('gif png jpg jpeg svg'),
     ),
   ];
-  // $form['general']['maintenance_coming_soon']['maintenance_mode']['maintenance_logo'] = [
-  //   '#type' => 'managed_file',
-  //   '#title'    => t('Maintenance LOGO'),
-  //   '#default_value' => theme_get_setting('maintenance_logo'),
-  //   '#upload_location' => 'public://',
-  //   '#description'   => t("Please Choose the LOGO Image for Maintenance Page"),
-  //   '#upload_validators' => array(
-  //     'file_validate_extensions' => array('gif png jpg jpeg svg'),
-  //   ),
-  // ];
-  // Comming soon
   $form['general']['maintenance_coming_soon']['coming_soon'] = array(
     '#type' => 'details',
     '#title' => t('Coming Soon'),
@@ -602,17 +606,6 @@ function business_plus_form_system_theme_settings_alter(array &$form, FormStateI
       'file_validate_extensions' => array('gif png jpg jpeg svg'),
     ),
   ];
-  // $form['general']['maintenance_coming_soon']['coming_soon']['coming_soon_logo_img'] = [
-  //   '#type' => 'managed_file',
-  //   '#title'    => t('Coming soon logo Image'),
-  //   '#default_value' => theme_get_setting('coming_soon_logo_img'),
-  //   '#upload_location' => 'public://',
-  //   '#description' => t('Choose coming soon logo image for Coming Soon page.'),
-  //   '#upload_validators' => array(
-  //     'file_validate_extensions' => array('gif png jpg jpeg svg'),
-  //   ),
-  // ];
-
   $form['#submit'][] = 'business_plus_form_submit';
 }
 function business_plus_form_submit(&$form, $form_state)

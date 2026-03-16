@@ -17,6 +17,7 @@ use \Drupal\paragraphs\Entity\Paragraph;
 use Drupal\Core\Url;
 use Drupal\file\Entity\File;
 use Drupal\node\Entity\Node;
+
 /**
  * Implements hook_form_system_theme_settings_alter() for settings form.
  *
@@ -33,7 +34,7 @@ function business_plus_preprocess_html(&$variables) {
   $variables['show_pannel'] = theme_get_setting('show_pannel');
   $variables['sticky'] = theme_get_setting('sticky');
   $variables['loader'] = theme_get_setting('loader');
-  $variables['styles'] = theme_get_setting('styles');   
+  $variables['styles'] = theme_get_setting('styles');
   // header
   $variables['header_variation'] = theme_get_setting('header_variation');
   $variables['color_set'] = ['set_1' => [
@@ -117,14 +118,45 @@ function business_plus_preprocess_html(&$variables) {
     ],
   ],
 ];
-  
+
   $account = \Drupal::currentUser();
   $roles = $account->getRoles();
   foreach ($roles as $role) {
     $variables['attributes']['class'][] = 'role-' . $role;
   }
 }
+
+function business_plus_preprocess_block(&$variables) {
+  // var_dump($variables['plugin_id'], 'plugin id');
+
+  if ($variables['plugin_id'] === 'system_branding_block') {
+
+    $fid = theme_get_setting('site_logo_dol')[0];
+    if ($fid) {
+      $file = File::load($fid);
+      if ($file) {
+        $path = \Drupal::service('file_url_generator')->generateAbsoluteString($file->getFileUri());
+        $variables['site_logo_dol'] = $path;
+      }
+    }
+    // var_dump($variables['site_logo_dol'], 'is site_logo_dol present?');
+
+  }
+}
+
 function business_plus_preprocess_page(&$variables){
+
+  /* $fid = theme_get_setting('site_logo_dol')[0];
+  if ($fid) {
+    $file = File::load($fid);
+    if ($file) {
+      $path = \Drupal::service('file_url_generator')->generateAbsoluteString($file->getFileUri());
+      $variables['site_logo_dol'] = $path;
+    }
+  } */
+  // var_dump($variables['site_logo_dol'], 'this thing?!');
+
+
   $variables['header_variation'] = theme_get_setting('header_variation');
   $variables['sticky'] = theme_get_setting('sticky');
   $variables['loader'] = theme_get_setting('loader');
@@ -145,7 +177,7 @@ function business_plus_preprocess_page(&$variables){
  $variables['page_403_message_title'] = theme_get_setting('page_403_message_title');
  $variables['page_403_description'] = theme_get_setting('page_403_description');
  $variables['page_404_banner_title'] = theme_get_setting('page_404_banner_title');
- $variables['page_404_title'] = theme_get_setting('page_404_title'); 
+ $variables['page_404_title'] = theme_get_setting('page_404_title');
  $variables['page_404_message_title'] = theme_get_setting('page_404_message_title');
  $variables['page_404_description'] = theme_get_setting('page_404_description');
 //  USER LOGIN
@@ -162,11 +194,11 @@ $variables['copyrights_text'] = theme_get_setting('copyrights_text');
  if (!empty(theme_get_setting('search_banner_img'))) {
    $fid = theme_get_setting('search_banner_img')[0];
    if (!empty($fid)) {
-   $file =File::load($fid);
-   $path = \Drupal::service('file_url_generator')->generateAbsoluteString($file->getFileUri());
+     $file =File::load($fid);
+     $path = \Drupal::service('file_url_generator')->generateAbsoluteString($file->getFileUri());
    }
  }
- $variables['search_banner_img'] = $path;  
+ $variables['search_banner_img'] = $path;
 
  //  403 IMAGE
  $path = "";
@@ -213,8 +245,8 @@ $variables['copyrights_text'] = theme_get_setting('copyrights_text');
  if (!empty(theme_get_setting('page_404_banner_img'))) {
    $fid = theme_get_setting('page_404_banner_img')[0];
    if (!empty($fid)) {
-   $file =File::load($fid);
-   $path = \Drupal::service('file_url_generator')->generateAbsoluteString($file->getFileUri());
+     $file =File::load($fid);
+     $path = \Drupal::service('file_url_generator')->generateAbsoluteString($file->getFileUri());
    }
  }
  $variables['error_page_banner'] = $path;
@@ -227,7 +259,7 @@ $variables['copyrights_text'] = theme_get_setting('copyrights_text');
    }
  }
  $variables['page_404_bg_img'] = $path;
- 
+
   $path = "";
   if (theme_get_setting('footer_bg_img') != NULL ) {
     $fid = theme_get_setting('footer_bg_img')[0];
@@ -256,7 +288,7 @@ $variables['copyrights_text'] = theme_get_setting('copyrights_text');
     }
   }
   $variables['login_bg_img'] = $path;
- 
+
 }
 function business_plus_preprocess_node(&$variables) {
 // ADDTOANY
@@ -303,9 +335,9 @@ if ($variables['node']->getType() == 'blogs'){
   }
   $variables['next_url'] = $data_next->toUrl()->setAbsolute()->toString();
   $variables['prev_url'] = $data_prev->toUrl()->setAbsolute()->toString();
-      
-  
-  $variables['nextNodeTitle']=$data_next->getTitle();    
+
+
+  $variables['nextNodeTitle']=$data_next->getTitle();
   $variables['prevNodeTitle']=$data_prev->getTitle();
 
   $prevNodeDate = $data_prev->getCreatedTime();
@@ -319,8 +351,8 @@ if ($variables['node']->getType() == 'blogs'){
   if (!empty($data_prev->get('field_image')->entity)) {
   $variables['prevImage'] = $data_prev->get('field_image')->entity->uri->value;
   }
- 
-  
+
+
 }
 
 }
@@ -388,7 +420,7 @@ function business_plus_theme(&$existing, $type, $theme, $path) {
       'business_plus_preprocess_user_pass'
    ),
   );
-  return $hooks; 
+  return $hooks;
 }
 
 // HOOK PREPROCESSOR USER LOGIN
@@ -467,9 +499,9 @@ function business_plus_preprocess_maintenance_page(&$variables) {
   $variables['maintenance_mode_description'] = theme_get_setting('maintenance_mode_description');
   $variables['coming_soon_title'] = theme_get_setting('coming_soon_title');
   $variables['coming_soon_description'] = theme_get_setting('coming_soon_description');
-  $variables['launch_date'] = theme_get_setting('launch_date'); 
   $variables['launch_date'] = theme_get_setting('launch_date');
-  $variables['#attached'] = [  
+  $variables['launch_date'] = theme_get_setting('launch_date');
+  $variables['#attached'] = [
     'drupalSettings' => [
         'custom_date' => $variables['custom_date'] = theme_get_setting('launch_date'),
     ],
@@ -485,7 +517,7 @@ function business_plus_preprocess_maintenance_page(&$variables) {
     }
   }
   $variables['maintenance_image'] = $path;  $path = "";
- 
+
   //  Coming soon IMAGE
   $path = "";
   if (!empty(theme_get_setting('coming_soon_img'))) {
@@ -510,7 +542,7 @@ function business_plus_form_user_register_form_alter(&$form, &$form_state, $form
   $form['account']['name']['#attributes']['placeholder'] = t( 'User Name *' );
   $form['actions']['submit']['#value'] = t('Sign Up');
 }
-function business_plus_form_alter(array &$form, FormStateInterface $form_state, $form_id) {  
+function business_plus_form_alter(array &$form, FormStateInterface $form_state, $form_id) {
   if ($form_id == 'user_pass') {
     $form['name']['#placeholder'] = t('User Name or Email address *');
     $form['actions']['submit']['#value'] = t('Reset');
@@ -545,7 +577,7 @@ function business_plus_form_comment_form_alter(&$form, &$form_state, $form_id) {
   $form['subject']['widget']['#access'] = FALSE;
   $form['actions']['submit']['#value'] = t('Post Comment');
   // $form['actions']['submit']['#attributes']['class'][] = 'btn btn-primary btn-style-1 btn-style-lg';
-  $form['actions']['preview']['#access'] = FALSE; 
+  $form['actions']['preview']['#access'] = FALSE;
   $form['author']['#weight'] = -981;
   $form['actions']['submit']['#weight'] = -1;
 }

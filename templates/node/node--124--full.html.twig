@@ -1,3 +1,4 @@
+
 {{ attach_library('bootstrap_barrio/node') }}
 {%
   set classes = [
@@ -34,7 +35,7 @@
   <div{{ content_attributes.addClass('node__content', 'clearfix') }}>
 
 
-
+<!-- intro descr -->
 <div class='container'>
   <div class='row'>
     <div class='col-12'>
@@ -146,6 +147,7 @@
 
 
 <!-- reports -->
+{# links ok #}
 <section class="services" style="padding: 0;" >
   <div class="container">
     <div class="services-block">
@@ -156,9 +158,9 @@
                   <div class="content-wrapper">
                       <h2><a class="title"
                              href="/features/reports"
-                             title="Requests for Proposals: RFP's"
+                             title="Reports"
                           >Reports: a clear view of the data</a></h2>
-                      <p>Admins can see multiple types of reports: by job-number, by estimate status, etc...</p>
+                      <p>Admins can see multiple types of reports: by job-number, by estimate status, by-region, by company, by paid status, by printed status.</p>
                       <a href="/features/rfps">
                           <svg class="long-arrow" xmlns="http://www.w3.org/2000/svg" width="280" height="70" viewBox="0 0 280 70"><path data-name="Path 39255" d="M401.537,232.07l45.653,32.084L402.044,302.07l-.507-31.112H167.19V260.265H401.537Z" transform="translate(-167.189 -232.07)" fill="#111" fill-rule="evenodd"></path></svg>
                       </a>
@@ -169,9 +171,9 @@
                 <div class="img-wrapper">
                     <a class="title"
                        href="/features/reports"
-                       title="Requests for Proposals: RFP's"
+                       title="Reports"
                     ><img src="https://d15g8hc4183yn4.cloudfront.net/wp-content/uploads/2026/03/14175728/reports-0.600x453.jpg"
-                          alt="Requests for Proposals: RFP's" /></a>
+                          alt="reports" /></a>
                 </div>
               </div>
 
@@ -323,7 +325,8 @@
 
 
 
-    {# {{ content }} #}
 
+    {{ content }}
   </div>
+
 </article>
