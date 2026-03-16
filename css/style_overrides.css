@@ -16,13 +16,12 @@
 }
 
 .fullwidth {
-  width: 1000px;
+  max-width: 1000px;
   margin: auto;
 }
 .maxwidth {
   max-width: 1000px;
   margin: auto;
-  // padding-bottom: 1em;
 }
 
 .text-formatted,
