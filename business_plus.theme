@@ -135,9 +135,9 @@ function business_plus_preprocess_block(&$variables) {
 
   if ($variables['plugin_id'] === 'system_branding_block') {
 
-    $fid = theme_get_setting('site_logo_dol')[0];
+    $fid = theme_get_setting('site_logo_dol');
     if ($fid) {
-      $file = File::load($fid);
+      $file = File::load($fid[0]);
       if ($file) {
         $path = \Drupal::service('file_url_generator')->generateAbsoluteString($file->getFileUri());
         $variables['site_logo_dol'] = $path;
@@ -149,18 +149,6 @@ function business_plus_preprocess_block(&$variables) {
 }
 
 function business_plus_preprocess_page(&$variables){
-
-  /* $fid = theme_get_setting('site_logo_dol')[0];
-  if ($fid) {
-    $file = File::load($fid);
-    if ($file) {
-      $path = \Drupal::service('file_url_generator')->generateAbsoluteString($file->getFileUri());
-      $variables['site_logo_dol'] = $path;
-    }
-  } */
-  // var_dump($variables['site_logo_dol'], 'this thing?!');
-
-
   $variables['header_variation'] = theme_get_setting('header_variation');
   $variables['sticky'] = theme_get_setting('sticky');
   $variables['loader'] = theme_get_setting('loader');

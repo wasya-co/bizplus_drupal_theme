@@ -1,0 +1,80 @@
+
+
+{%
+  set classes = [
+    'section-feature-0-0-0',
+
+    'block',
+    'block-' ~ configuration.provider|clean_class,
+    'block-' ~ plugin_id|clean_class,
+  ]
+%}
+{% set reverse_str = (content.field_is_reverse[0]['#markup'] == 'On') ? 'flex-direction: row-reverse; ' : '' %}
+{# value: {{ dump( content.field_is_reverse[0]['#markup'] ) }}
+reverse_str: {{ dump( reverse_str ) }} #}
+
+<div{{ attributes.addClass(classes) }}>
+  {{ title_prefix }}
+  {% if label %}
+    <h2{{ title_attributes }}>{{ label }}</h2>
+  {% endif %}
+  {{ title_suffix }}
+  {% block content %}
+    <div{{ content_attributes.addClass('content') }}>
+
+{# {{ dump( content ) }} #}
+
+{# link: {{ dump( content.field_link[0]['#plain_text'] ) }} #}
+
+{# body: {{ dump( content.body ) }} #}
+
+<section class="services" style="display: block;
+                                 {# border: 1px solid red; #}
+                                 padding: 0;
+                                 margin-bottom: 50px;
+                                 " >
+  <div class="container">
+    <div class="services-block">
+      <div class="service4">
+        <div class="row" style="display: flex; align-items: center; {{ reverse_str }}" >
+
+          <div class="col-md-6">
+            <div
+              {# class="img-wrapper" #}
+              style="display: flex;
+                     align-items: center;
+                     flex-direction: column;
+                     justify-content: center;
+                     {# min-height: 430px; #}
+                     "
+            >
+              <a class="title"
+                 href="{{ content.field_link[0]['#plain_text'] }}"
+              >{{ content.field_image }}</a>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="content-wrapper">
+              <h2><a class="title"
+                     href="{{ content.field_link[0]['#plain_text'] }}"
+                  >{{ content.field_title }}</a></h2>
+              {{ content.body }}
+              <a class=''
+                 href="{{ content.field_link[0]['#plain_text'] }}"
+              ><svg class="long-arrow" xmlns="http://www.w3.org/2000/svg" width="280" height="70" viewBox="0 0 280 70"><path data-name="Path 39255" d="M401.537,232.07l45.653,32.084L402.044,302.07l-.507-31.112H167.19V260.265H401.537Z" transform="translate(-167.189 -232.07)" fill="#111" fill-rule="evenodd"></path></svg></a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    </div>
+  {% endblock %}
+</div>
+
+
