@@ -608,8 +608,14 @@ function business_plus_form_system_theme_settings_alter(array &$form, FormStateI
   ];
   $form['#submit'][] = 'business_plus_form_submit';
 }
-function business_plus_form_submit(&$form, $form_state)
-{
+
+function business_plus_form_submit(&$form, $form_state) {
+  if ($file_id = $form_state->getValue(['site_logo_dol', '0'])) {
+    $file = \Drupal::entityTypeManager()->getStorage('file')->load($file_id);
+    $file->setPermanent();
+    $file->save();
+  }
+
   if ($file_id = $form_state->getValue(['footer_bg_img', '0'])) {
     $file = \Drupal::entityTypeManager()->getStorage('file')->load($file_id);
     $file->setPermanent();

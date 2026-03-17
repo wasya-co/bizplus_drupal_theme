@@ -27,6 +27,9 @@ use Drupal\node\Entity\Node;
  */
 function business_plus_preprocess_html(&$variables) {
   global $base_url;
+
+  // $variables['site_logo_dol'] = theme_get_setting('site_logo_dol');
+
   $variables['base_url'] = $base_url;
   $variables['default_color'] = theme_get_setting('default_color');
   $variables['primary_color'] = theme_get_setting('primary_color');
@@ -37,87 +40,88 @@ function business_plus_preprocess_html(&$variables) {
   $variables['styles'] = theme_get_setting('styles');
   // header
   $variables['header_variation'] = theme_get_setting('header_variation');
-  $variables['color_set'] = ['set_1' => [
-    'title' => t('color_set_1'),
-    'name' => t('Combo 1'),
-    'colors' => [
-    'primary_color' => '#C0D684',
-    'secondary_color' => '#2d353c',
+  $variables['color_set'] = [
+    'set_1' => [
+      'title' => t('color_set_1'),
+      'name' => t('Combo 1'),
+      'colors' => [
+      'primary_color' => '#C0D684',
+      'secondary_color' => '#2d353c',
+      ],
     ],
-  ],
-  'set_2' => [
-    'title' => t('color_set_2'),
-    'name' => t('Combo 2'),
-    'colors' => [
-    'primary_color' => '#f5071ef2',
-    'secondary_color' => '#3a0a46',
+    'set_2' => [
+      'title' => t('color_set_2'),
+      'name' => t('Combo 2'),
+      'colors' => [
+      'primary_color' => '#f5071ef2',
+      'secondary_color' => '#3a0a46',
+      ],
     ],
-  ],
-  'set_3' => [
-    'title' => t('color_set_3'),
-    'name' => t('Combo 3'),
-    'colors' => [
-    'primary_color' => '#FFC100',
-    'secondary_color' => '#3ab1b7',
+    'set_3' => [
+      'title' => t('color_set_3'),
+      'name' => t('Combo 3'),
+      'colors' => [
+      'primary_color' => '#FFC100',
+      'secondary_color' => '#3ab1b7',
+      ],
     ],
-  ],
-  'set_4' => [
-    'title' => t('color_set_4'),
-    'name' => t('Combo 4'),
-    'colors' => [
-    'primary_color' => '#466e17',
-    'secondary_color' => '#13152e',
+    'set_4' => [
+      'title' => t('color_set_4'),
+      'name' => t('Combo 4'),
+      'colors' => [
+      'primary_color' => '#466e17',
+      'secondary_color' => '#13152e',
+      ],
     ],
-  ],
-  'set_5' => [
-    'title' => t('color_set_5'),
-    'name' => t('Combo 5'),
-    'colors' => [
-    'primary_color' => '#f29e44',
-    'secondary_color' => '#000',
+    'set_5' => [
+      'title' => t('color_set_5'),
+      'name' => t('Combo 5'),
+      'colors' => [
+      'primary_color' => '#f29e44',
+      'secondary_color' => '#000',
+      ],
     ],
-  ],
-  'set_6' => [
-    'title' => t('color_set_6'),
-    'name' => t('Combo 6'),
-    'colors' => [
-    'primary_color' => '#63D2FF',
-    'secondary_color' => '#26594c',
+    'set_6' => [
+      'title' => t('color_set_6'),
+      'name' => t('Combo 6'),
+      'colors' => [
+      'primary_color' => '#63D2FF',
+      'secondary_color' => '#26594c',
+      ],
     ],
-  ],
-  'set_7' => [
-    'title' => t('color_set_7'),
-    'name' => t('Combo 7'),
-    'colors' => [
-    'primary_color' => '#59cad1',
-    'secondary_color' => '#404040',
+    'set_7' => [
+      'title' => t('color_set_7'),
+      'name' => t('Combo 7'),
+      'colors' => [
+      'primary_color' => '#59cad1',
+      'secondary_color' => '#404040',
+      ],
     ],
-  ],
-  'set_8' => [
-    'title' => t('color_set_8'),
-    'name' => t('Combo 8'),
-    'colors' => [
-    'primary_color' => '#91972A',
-    'secondary_color' => '#000',
+    'set_8' => [
+      'title' => t('color_set_8'),
+      'name' => t('Combo 8'),
+      'colors' => [
+      'primary_color' => '#91972A',
+      'secondary_color' => '#000',
+      ],
     ],
-  ],
-  'set_9' => [
-    'title' => t('color_set_9'),
-    'name' => t('Combo 9'),
-    'colors' => [
-    'primary_color' => '#1a85dc',
-    'secondary_color' => '#1f334e',
+    'set_9' => [
+      'title' => t('color_set_9'),
+      'name' => t('Combo 9'),
+      'colors' => [
+      'primary_color' => '#1a85dc',
+      'secondary_color' => '#1f334e',
+      ],
     ],
-  ],
-  'set_10' => [
-    'title' => t('color_set_10'),
-    'name' => t('Combo 10'),
-    'colors' => [
-    'primary_color' => '#0ee773',
-    'secondary_color' => '#404040',
+    'set_10' => [
+      'title' => t('color_set_10'),
+      'name' => t('Combo 10'),
+      'colors' => [
+      'primary_color' => '#0ee773',
+      'secondary_color' => '#404040',
+      ],
     ],
-  ],
-];
+  ];
 
   $account = \Drupal::currentUser();
   $roles = $account->getRoles();
