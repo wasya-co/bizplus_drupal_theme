@@ -43,3 +43,10 @@
 .header-fixed img.site-logo-dol {
   display: block;
 }
+
+body.page-node-124 .home2-info-block * {
+  color: black;
+}
+body.page-node-124 .home2-info-block a.btn-primary {
+  background-color: black;
+}
