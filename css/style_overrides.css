@@ -50,3 +50,8 @@ body.page-node-124 .home2-info-block * {
 body.page-node-124 .home2-info-block a.btn-primary {
   background-color: black;
 }
+
+
+.clear {
+  clear: both;
+}
