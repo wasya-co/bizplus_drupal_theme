@@ -8186,16 +8186,6 @@ section.home1.home1-info .swiper-button-prev:hover::after {
   #header-3 .sticky .navbar-nav .nav-item > .nav-link {
     color: var(--bs-secondary);
   }
-  .home1-page #header-1 .navbar-nav .nav-item:nth-child(n + 5) > .nav-link,
-  .home1-page
-    #header-3
-    .nav-sticky:not(.sticky)
-    .navbar-nav
-    .nav-item:nth-child(n + 5)
-    > .nav-link {
-    color: var(--bs-secondary);
-    position: relative;
-  }
   .home1-page #header-1 .search svg path,
   .home1-page #header-1 .navbar-toggler svg rect {
     fill: var(--bs-secondary);
@@ -8362,16 +8352,6 @@ section.home1.home1-info .swiper-button-prev:hover::after {
   }
 }
 @media (min-width: 991.98px) {
-  .home1-page #header-1 .navbar-nav .nav-item:nth-child(n + 5) > .nav-link,
-  .home1-page
-    #header-3
-    .nav-sticky:not(.sticky)
-    .navbar-nav
-    .nav-item:nth-child(n + 5)
-    > .nav-link {
-    color: var(--bs-secondary);
-    position: relative;
-  }
   .home2.home2-client {
     padding: 80px 0;
   }
