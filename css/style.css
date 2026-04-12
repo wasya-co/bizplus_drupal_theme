@@ -332,6 +332,7 @@
     U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
     U+FEFF, U+FFFD;
 }
+
 :root {
   --bs-primary: #3ab86e;
   --bs-secondary: #111111;
@@ -1092,7 +1093,7 @@ transform: unset !important;
 /* Footer-styles */
 .main-footer {
   background-color: #000;
-  background-position: center;
+  background-position: bottom center;
   background-size: cover;
 }
 .footer-bottom {
@@ -1147,7 +1148,8 @@ transform: unset !important;
 .bottom-order .links a,
 .bottom-order .connect p {
   text-decoration: none;
-  color: var(--paragraph-text-color);
+  /* color: var(--paragraph-text-color); */
+  color: white;
   font-family: var(--paragraph-font);
   font-size: 15px;
   display: inline-block;
