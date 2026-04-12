@@ -1090,12 +1090,13 @@ transform: unset !important;
 }
 
 /* Footer-styles */
-.footer-top {
+.main-footer {
   background-color: #000;
   background-position: center;
+  background-size: cover;
 }
 .footer-bottom {
-  background-color: #333333;
+  background-color: rgba(0,0,0, 0.5);
 }
 .footer-block {
   padding: 100px 0 80px;
@@ -1235,13 +1236,16 @@ transform: unset !important;
 .footer-bottom-block p.copyrights a:hover {
   color: var(--bs-primary);
 }
-.footer-bottom-block ul {
+.footer-bottom-block .social-media {
   display: flex;
   justify-content: space-between;
   width: 110px;
   margin-bottom: 0;
 }
-.footer-bottom-block ul a {
+.footer-bottom-block .social-media .field {
+  display: flex;
+}
+.footer-bottom-block .social-media a {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1250,13 +1254,13 @@ transform: unset !important;
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 50%;
 }
-.footer-bottom-block ul a > svg path {
+.footer-bottom-block .social-media a > svg path {
   fill: #ffffff;
 }
-.footer-bottom-block ul a:hover > svg path {
+.footer-bottom-block .social-media a:hover > svg path {
   fill: var(--bs-primary);
 }
-.footer-bottom-block ul a > svg {
+.footer-bottom-block .social-media a > svg {
   width: 10px;
   height: 11px;
 }
@@ -8778,10 +8782,6 @@ section.home1.home1-info .swiper-button-prev:hover::after {
 
 /* DEV - 2 */
 /* FOOTER */
-.footer-top {
-  background-position: left !important;
-  background-repeat: no-repeat;
-}
 .footer-block .bottom-order .connect .form-item-footer-form .form-control {
   width: auto !important;
 }
@@ -9274,9 +9274,7 @@ footer .navbar-brand svg .box-icon {
   .top-order h2 {
     margin-top: 45px !important;
   }
-  .footer-top {
-    background-size: cover;
-  }
+
   .element-div:first-child ul li {
     float: inherit !important;
   }
@@ -9490,9 +9488,7 @@ footer .navbar-brand svg .box-icon {
   .node.node--type-shortcodes .content-block:hover .content-wrapper svg path {
     fill: var(--bs-primary);
   }
-  .footer-top {
-    background-position: center !important;
-  }
+
   .block-business-plus-site-branding {
     width: 50%;
   }
