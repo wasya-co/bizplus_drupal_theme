@@ -1,20 +1,16 @@
-{% if content.field_slider_style.0['#markup'] in 'style2' %}
+{% if content.field_slider_style.0['#markup'] in 'style1' %}
+    {% include '@business_plus/paragraph/slider/slider1.html.twig' %}
+{% elseif content.field_slider_style.0['#markup'] in 'style2' %}
     {% include '@business_plus/paragraph/slider/slider2.html.twig' %}
 {% elseif content.field_slider_style.0['#markup'] in 'style3' %}
     {% include '@business_plus/paragraph/slider/slider3.html.twig' %}
 {% else %}
-    <section class="home1 home1-info">
-        <div class="container">
-            <div class="home1-info-block">
-                <div class="swiper mySwiper">
-                    <div class="swiper-wrapper">
-                        {{ content.field_paragraph }}
-                    </div>
-                    <div class="swiper-button-next" data-next="{{content.field_previous_caption.0}}"></div>
-                    <div class="swiper-button-prev" data-prev="{{content.field_next_caption.0}}"></div>
-                    <div class="swiper-pagination"></div>
-                </div>
-            </div>
-        </div>
-    </section>
+
+  <section class="home2 home2-info"  style="background-image: url('{{ content.field_background_image.0 }}');background-repeat: no-repeat;background-position: center;background-size: cover;">
+    <div class="container">
+      <div class="home2-info-block">
+      </div>
+    </div>
+  </section>
+
 {% endif %}

@@ -9,12 +9,7 @@
     {% endfor %}
   {% endif %}
 {% else %}
-    {{ title_attributes }}>{{ label }}
-    {% if multiple %}
-    {% endif %}
-    {% for item in items %}
-      {{ item.content }}
-    {% endfor %}
-    {% if multiple %}
-    {% endif %}
+  {% for item in items %}
+    {{ item.content }}
+  {% endfor %}
 {% endif %}
