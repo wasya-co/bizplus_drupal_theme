@@ -1,0 +1,24 @@
+{
+  "name": "bizplus_drupal_theme",
+  "version": "0.0.0",
+  "description": "bizplus_drupal_theme",
+  "main": "main.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wasya-co/bizplus_drupal_theme.git"
+  },
+  "author": "Victor Pudeyev <victor@wasya.co>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wasya-co/bizplus_drupal_theme/issues"
+  },
+  "homepage": "https://github.com/wasya-co/bizplus_drupal_theme",
+  "dependencies": {
+    "node-sass": "^9.0.0"
+  },
+  "scripts": {
+    "build": "node-sass ./scss -o ./css",
+    "build-minify": "node-sass ./scss -o ./css --output-style compressed",
+    "watch": "node-sass -w ./scss -o ./css"
+  }
+}

@@ -15,7 +15,7 @@ global-styling:
 
   css:
     component:
-      css/fontawesome/css/all.css: {}
+      vendor/css/fontawesome/all.css: {}
       color/color-scheme.css: {}
       css/jquery.fancybox.min.css: {}
       css/magnific-popup.css: {}
