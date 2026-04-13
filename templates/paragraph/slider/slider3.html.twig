@@ -1,28 +1,31 @@
 <section class="home3 home3-info" style="background-image: url('{{ content.field_background_image.0 }}');background-repeat: no-repeat;background-position: center;background-size: cover;">
-    <div class="container">
-        <div class="home3-info-block">
-            <div class="swiper mySwiper">
-                <div class="swiper-wrapper">
-                    {{ content.field_paragraph }}
-                </div>
-                <div class="swiper-btn">
-                    <div class="swiper-button-next">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="280" height="70" viewBox="0 0 280 70">
-                            <path data-name="Path 39255" d="M401.537,232.07l45.653,32.084L402.044,302.07l-.507-31.112H167.19V260.265H401.537Z" transform="translate(-167.189 -232.07)" fill="#111" fill-rule="evenodd"></path>
-                        </svg>
-                        Next
-                    </div>
-                    <div class="swiper-button-prev">
-                        Previous
-                        <svg style="transform: rotate(180deg);" xmlns="http://www.w3.org/2000/svg" width="280" height="70" viewBox="0 0 280 70">
-                            <path data-name="Path 39255" d="M401.537,232.07l45.653,32.084L402.044,302.07l-.507-31.112H167.19V260.265H401.537Z" transform="translate(-167.189 -232.07)" fill="#111" fill-rule="evenodd"></path>
-                        </svg>
-                    </div>
-                </div>
-                <div class="swiper-pagination">
-                    <span class="swiper-pagination-current">1</span> / <span class="swiper-pagination-total">3</span>
-                </div>
+  <div class="container">
+    <div class="home3-info-block">
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">{{ content.field_paragraph }}</div>
+        {{ dump( content.field_paragraph ) }}
+        {% if content.field_paragraph|length > 1 %}
+          <div class="swiper-btn">
+
+            <div class="swiper-button-next">
+                <svg xmlns="http://www.w3.org/2000/svg" width="280" height="70" viewBox="0 0 280 70">
+                <path data-name="Path 39255" d="M401.537,232.07l45.653,32.084L402.044,302.07l-.507-31.112H167.19V260.265H401.537Z" transform="translate(-167.189 -232.07)" fill="#111" fill-rule="evenodd"></path>
+                </svg>
+                Next
             </div>
-        </div>
+            <div class="swiper-button-prev">
+                Previous
+                <svg style="transform: rotate(180deg);" xmlns="http://www.w3.org/2000/svg" width="280" height="70" viewBox="0 0 280 70">
+                <path data-name="Path 39255" d="M401.537,232.07l45.653,32.084L402.044,302.07l-.507-31.112H167.19V260.265H401.537Z" transform="translate(-167.189 -232.07)" fill="#111" fill-rule="evenodd"></path>
+                </svg>
+            </div>
+
+          </div>
+          <div class="swiper-pagination">
+            <span class="swiper-pagination-current">1</span> / <span class="swiper-pagination-total">3</span>
+          </div>
+        {% endif %}
+      </div>
     </div>
+  </div>
 </section>
