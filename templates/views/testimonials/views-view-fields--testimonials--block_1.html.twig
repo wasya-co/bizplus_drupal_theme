@@ -3,7 +3,8 @@
         <div class="divide-block">
             <div class="img-block">
                 <div class="img-wrapper">
-                    <img src="{{ fields.field_image.content|striptags|trim }}" alt="{{ fields.title.content }}"/>
+                    <img src="{{ fields.field_image.content|striptags|trim }}"
+                         alt="{{ fields.title.content|striptags|trim }}"/>
                 </div>
                 <div class="content-wrapper">
                     <h5>{{ fields.title.content }}</h5>
