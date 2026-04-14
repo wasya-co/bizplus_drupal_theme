@@ -22,8 +22,10 @@
             <div class="content-wrapper">
 
 
-              <h2>{{ label }}</h2>
-              {{content.field_location.0}}
+              <h2  data-aos="fade-up" class="aos-init aos-animate">{{ label }}</h2>
+              <div data-aos="fade-up" class="aos-init aos-animate" >
+                {{content.field_location.0}}
+              </div>
 
               <ul class="list-unstyled">
                 <li data-aos="fade-up" class="aos-init aos-animate">
@@ -42,7 +44,7 @@
           </div>
           <div class="col-md-6">
             <div class="form-wrapper">
-              <h2>{{content.field_job_title.0}}</h2>
+              <h2  data-aos="fade-up" class="aos-init aos-animate">{{content.field_job_title.0}}</h2>
               <div data-aos="fade-up" class="aos-init aos-animate" >
                 {{content.field_description.0}}
               </div>
