@@ -62,3 +62,19 @@ body.page-node-124 .home2-info-block a.btn-primary {
   max-width: 90%;
   height: auto;
 }
+
+/* R */
+section.resume-item {
+  .home2-contact-block .row .col-md-6:last-child {
+    margin-top: 0em;
+  }
+  .col-1 {
+    h2 {
+      margin-top: 80px;
+    }
+    ul {
+      margin-bottom: 1em;
+    }
+  }
+}
+

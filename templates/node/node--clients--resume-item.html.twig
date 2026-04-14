@@ -1,0 +1,68 @@
+
+{%
+  set classes = [
+    'node',
+    'node--type-' ~ node.bundle|clean_class,
+    node.isPromoted() ? 'node--promoted',
+    node.isSticky() ? 'node--sticky',
+    not node.isPublished() ? 'node--unpublished',
+    view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+    'clearfix',
+  ]
+%}
+<article{{ attributes.addClass(classes)|without('role') }}>
+  <div{{ content_attributes.addClass('node__content', 'clearfix') }}>
+
+
+  <section class="home2 home2-contact resume-item">
+    <div class="container">
+      <div class="home2-contact-block ">
+        <div class="row">
+          <div class="col-md-6 col-1">
+            <div class="content-wrapper">
+
+
+              <h2>{{ label }}</h2>
+              {{content.field_location.0}}
+
+              <ul class="list-unstyled">
+                <li data-aos="fade-up" class="aos-init aos-animate">
+                    <div class="contact-content">
+                        <h4>{{content.field_duration.0}}</h4>
+                        <i>{{content.field_job_type.0}}</i>
+                    </div>
+                </li>
+              </ul>
+
+              <div data-aos="fade-up" class="aos-init aos-animate" >
+                {{ content.field_image.0 }}
+              </div>
+
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-wrapper">
+              <h2>{{content.field_job_title.0}}</h2>
+              <div data-aos="fade-up" class="aos-init aos-animate" >
+                {{content.field_description.0}}
+              </div>
+
+              {# <div class="forms-block aos-init" data-aos="fade-up">
+                <div class="form1">
+                {{content.field_contact_form}}
+                </div>
+              </div> #}
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+  </div>
+</article>
+
