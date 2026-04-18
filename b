@@ -3,7 +3,7 @@
 # set -e ## error
 set -x ## verbose
 
-# yarn run build-minify
+yarn run build-minify
 
 git add .
 git commit -m 'autocommit'
