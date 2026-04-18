@@ -10,6 +10,55 @@
   }
 }
 
+/* C */
+
+
+
+.clients-v1 {
+  .carousels-block {
+    border-bottom: 1px solid #00000026;
+    padding: 50px 0 100px 0;
+  }
+  .carousels5 .img-wrapper img {
+    max-height: 100px;
+    max-width: 100px;
+    filter: grayscale(100%);
+  }
+}
+
+/* H */
+
+.home1 {
+  .center-btn {
+		margin: auto;
+		margin-top: 68px;
+	}
+  .center-title {
+		margin-bottom: 60px;
+	}
+
+
+	.left-title {
+		margin-bottom: 32px;
+	}
+	.left-btn {
+		margin-top: 45px;
+	}
+
+	.mini-title {
+		display: inline-block;
+		font-size: 18px;
+		font-weight: 600;
+		font-family: var(--heading-font);
+		color: var(--bs-primary);
+		margin-bottom: 24px;
+		line-height: 21px;
+	}
+}
+
+
+/* O */
+
 .owl-stage {
   display: flex;
   align-items: center;

@@ -2439,9 +2439,6 @@ pre[class*="language-"] {
 .carousels4 .img-wrapper:hover .content-wrapper {
   opacity: 1;
 }
-.carousels5 .img-wrapper img {
-  height: auto;
-}
 
 /* DIVIDERS PAGE */
 .dividers-block h2 {
@@ -3763,28 +3760,7 @@ display: flex;
   font-weight: 600;
   color: var(--bs-secondary);
 }
-.home1 .mini-title {
-  display: inline-block;
-  font-size: 18px;
-  font-weight: 600;
-  font-family: var(--heading-font);
-  color: var(--bs-primary);
-  margin-bottom: 24px;
-  line-height: 21px;
-}
-.home1 .left-title {
-  margin-bottom: 32px;
-}
-.home1 .center-title {
-  margin-bottom: 60px;
-}
-.home1 .left-btn {
-  margin-top: 45px;
-}
-.home1 .center-btn {
-  margin: auto;
-  margin-top: 68px;
-}
+
 .home1-about {
   max-width: 1536px;
   margin: auto;

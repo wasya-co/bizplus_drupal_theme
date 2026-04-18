@@ -1,15 +1,25 @@
-<div class="home1 home1-carousel">
-    <div class="container">
-        <div class="home1-carousel-block">
-            <div class="carousels-block">
-                <div class="carousels5">
-                    <div class="owl-carousel owl-theme" id="owl-carousel2">
-                        {% for row in rows %}
-                            {{ row.content }}
-                        {% endfor %}
-                    </div>
-                </div>
-            </div>
+{#
+ # 2026-04-18 OK
+##}
+<div class="home1 home1-carousel clients-v1">
+  <div class="container">
+    {% if content.field_tagline.0 or content.field_title.0 %}
+      <div class="text-center">
+      <span class="mini-title">{{ content.field_tagline.0 }}</span>
+      <h2 class="center-title">{{ content.field_title.0 }}</h2>
+      </div>
+    {% endif %}
+
+    <div class="">
+      <div class="carousels-block">
+        <div class="carousels5">
+          <div class="owl-carousel owl-theme" id="owl-carousel2">
+            {% for row in rows %}
+              {{ row.content }}
+            {% endfor %}
+          </div>
         </div>
+      </div>
     </div>
+  </div>
 </div>
