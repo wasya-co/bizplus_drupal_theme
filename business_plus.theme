@@ -172,16 +172,16 @@ function business_plus_preprocess_page(&$variables){
  $variables['page_404_title'] = theme_get_setting('page_404_title');
  $variables['page_404_message_title'] = theme_get_setting('page_404_message_title');
  $variables['page_404_description'] = theme_get_setting('page_404_description');
-//  USER LOGIN
+ //  USER LOGIN
  $variables['login_banner_title'] = theme_get_setting('login_banner_title');
  $variables['login_title'] = theme_get_setting('login_title');
-//  FOOTER
-$variables['footer_links_title'] = theme_get_setting('footer_links_title');
-$variables['footer_description'] = theme_get_setting('footer_description');
-$variables['copyrights'] = theme_get_setting('copyrights');
-$variables['copyrights_link'] = theme_get_setting('copyrights_link');
-$variables['copyrights_text'] = theme_get_setting('copyrights_text');
- // SEARCH BANNER IMAGE
+ //  FOOTER
+  $variables['footer_links_title'] = theme_get_setting('footer_links_title');
+  $variables['footer_description'] = theme_get_setting('footer_description');
+  $variables['copyrights'] = theme_get_setting('copyrights');
+  $variables['copyrights_link'] = theme_get_setting('copyrights_link');
+  $variables['copyrights_text'] = theme_get_setting('copyrights_text');
+  // SEARCH BANNER IMAGE
  $path = "";
  if (!empty(theme_get_setting('search_banner_img'))) {
    $fid = theme_get_setting('search_banner_img')[0];
@@ -232,7 +232,7 @@ $variables['copyrights_text'] = theme_get_setting('copyrights_text');
    }
  }
  $variables['error_img'] = $path;
-// 404 BANNER IMAGE
+  // 404 BANNER IMAGE
  $path = "";
  if (!empty(theme_get_setting('page_404_banner_img'))) {
    $fid = theme_get_setting('page_404_banner_img')[0];
@@ -282,8 +282,9 @@ $variables['copyrights_text'] = theme_get_setting('copyrights_text');
   $variables['login_bg_img'] = $path;
 
 }
+
 function business_plus_preprocess_node(&$variables) {
-// ADDTOANY
+  // ADDTOANY
   // Add to any module Portfolio
   if ($variables['node']->getType() == 'portfolio'){
     $block = \Drupal\block\Entity\Block::load('addtoanybuttons');
@@ -299,12 +300,12 @@ function business_plus_preprocess_node(&$variables) {
   }
 
   // PREVOIOS NODE NEXT NODE
-if ($variables['node']->getType() == 'blogs'){
-  $nids = \Drupal::entityQuery('node')->accessCheck(FALSE)
-            ->condition('type','blogs')->condition('status',1)->execute();
-  $blog_nodes = [];
-  foreach($nids as $n){
-    $blog_nodes[] = $n;
+  if ($variables['node']->getType() == 'blogs'){
+    $nids = \Drupal::entityQuery('node')->accessCheck(FALSE)
+              ->condition('type','blogs')->condition('status',1)->execute();
+    $blog_nodes = [];
+    foreach($nids as $n){
+      $blog_nodes[] = $n;
   }
 
   $nid = $variables['node']->id();
@@ -345,9 +346,10 @@ if ($variables['node']->getType() == 'blogs'){
   }
 
 
-}
+  }
 
 }
+
 function business_plus_preprocess_links__language_block(&$variables) {
   $currentLanguageCode = \Drupal::languageManager()
     ->getCurrentLanguage()
@@ -370,6 +372,7 @@ function business_plus_preprocess_links__language_block(&$variables) {
     $variables['links'] = [$alternate];
   }
 }
+
 function business_plus_preprocess_paragraph(&$variables){
   $paragraph = $variables['paragraph'];
   if($paragraph->bundle() == 'question_and_answer'){
@@ -438,6 +441,7 @@ function business_plus_preprocess_user_login(&$variables) {
   }
   $variables['login_bg_img'] = $path;
 }
+
 // HOOK PREPROCESSOR USER REGISTER
 function business_plus_preprocess_user_register(&$variables) {
   $variables['register_banner_title'] = theme_get_setting('register_banner_title');
@@ -461,6 +465,7 @@ function business_plus_preprocess_user_register(&$variables) {
   }
   $variables['register_bg_img'] = $path;
 }
+
 // HOOK PREPROCESSOR USER FORGOT PASSWORD
 function business_plus_preprocess_user_pass(&$variables) {
   $variables['reset_banner_title'] = theme_get_setting('reset_banner_title');
@@ -484,6 +489,7 @@ function business_plus_preprocess_user_pass(&$variables) {
   }
   $variables['resetpassword_bg_img'] = $path;
 }
+
 // MAINTANENCE AND COMMING SOON PAGE
 function business_plus_preprocess_maintenance_page(&$variables) {
   $variables['mode_type'] = theme_get_setting('mode_type');
@@ -523,24 +529,25 @@ function business_plus_preprocess_maintenance_page(&$variables) {
 }
 
 
-function business_plus_form_user_login_form_alter(&$form, &$form_state, $form_id) {
-  $form['name']['#placeholder'] = t('User Name *');
-  $form['pass']['#placeholder'] = t('Password *');
-  $form['actions']['submit']['#value'] = t('Login');
-  $form['actions']['submit']['#attributes']['class'][]='btn btn-primary';
-}
-function business_plus_form_user_register_form_alter(&$form, &$form_state, $form_id) {
-  $form['account']['mail']['#attributes']['placeholder'] = t( 'Email *' );
-  $form['account']['name']['#attributes']['placeholder'] = t( 'User Name *' );
-  $form['actions']['submit']['#value'] = t('Sign Up');
-}
-function business_plus_form_alter(array &$form, FormStateInterface $form_state, $form_id) {
-  if ($form_id == 'user_pass') {
-    $form['name']['#placeholder'] = t('User Name or Email address *');
-    $form['actions']['submit']['#value'] = t('Reset');
-    $form['actions']['submit']['#attributes']['class'][]='btn btn-primary';
-  }
-}
+// function business_plus_form_user_login_form_alter(&$form, &$form_state, $form_id) {
+//   $form['name']['#placeholder'] = t('User Name *');
+//   $form['pass']['#placeholder'] = t('Password *');
+//   $form['actions']['submit']['#value'] = t('Login');
+//   $form['actions']['submit']['#attributes']['class'][]='btn btn-primary';
+// }
+// function business_plus_form_user_register_form_alter(&$form, &$form_state, $form_id) {
+//   $form['account']['mail']['#attributes']['placeholder'] = t( 'Email *' );
+//   $form['account']['name']['#attributes']['placeholder'] = t( 'User Name *' );
+//   $form['actions']['submit']['#value'] = t('Sign Up');
+// }
+// function business_plus_form_alter(array &$form, FormStateInterface $form_state, $form_id) {
+//   if ($form_id == 'user_pass') {
+//     $form['name']['#placeholder'] = t('User Name or Email address *');
+//     $form['actions']['submit']['#value'] = t('Reset');
+//     $form['actions']['submit']['#attributes']['class'][]='btn btn-primary';
+//   }
+// }
+
 /**
  * Searh Result Page.
  */
@@ -573,6 +580,7 @@ function business_plus_form_comment_form_alter(&$form, &$form_state, $form_id) {
   $form['author']['#weight'] = -981;
   $form['actions']['submit']['#weight'] = -1;
 }
-function business_plus_library_info_alter(&$libraries, $ext){
-  unset($libraries['form']);
-}
+
+// function business_plus_library_info_alter(&$libraries, $ext){
+//   unset($libraries['form']);
+// }
