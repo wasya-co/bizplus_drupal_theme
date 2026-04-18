@@ -1,5 +1,6 @@
 
 <div class="clients-v1">
+
   {% if content.field_tagline.0 or content.field_title.0 %}
     <div class="text-center">
     <span class="mini-title">{{ content.field_tagline.0 }}</span>
@@ -8,4 +9,7 @@
   {% endif %}
 
   {{ content.field_client_style_1 }}
+
 </div>
+
+
