@@ -1,65 +1,64 @@
 {% set base_url = url('<front>')  %}
+
 <section class="blog blog-detailsfull">
-    <div class="container">
-        <div class="blog-block">
-            <div class="whole-wrapper">
-                <div class="para">{{content.field_description.0}}</div>
-                <div class="img-wrapper blogs-img-wrapper" data-aos="fade-up">
-                    <img src="{{file_url(content.field_image['#items'].entity.uri.value)}}" alt="Blog-Image"/>
-                </div>
-                <div class="para">{{content.field_content.0}}</div>
-                    <div class="links-wrapper">
-                        <ul class="list-unstyled" data-aos="fade-down">
-                            {% for key,value in node.field_tags.value %}
-                            <li>
-                                {{ content.field_tags[key]}}
-                            </li>
-                            {% endfor %}                                
-                        </ul>
-                        {{ blogshare }}
-                        {# <div class="social-icons" data-aos="fade-up">
-                            {{ content.addtoany }} 
-                        </div> #}
-                    </div>
-                    {% if logged_in == false %}
-                        <div class="login-wrapper" data-aos="fade-in">
-                            <h3><a href="{{base_url}}/user/login" title="Login">Login</a> or <a href="{{base_url}}/user/register" title="Register">Register</a> to post comments</h3>
-                        </div>
-                    {% endif %} 
-                {{content.field_comments.0}}
-                <div class="divider-wrapper next-prev-node">
-                    <div class="left-wrapper" data-aos="fade-down">
-                        <div class="img-wrapper" data-aos="fade-up" data-aos-duration="700">
-                            <a href="{{prev_url}}" title="Details page">
-                                <img src="{{file_url(prevImage)}}" alt="Blog-Image"/>
-                            </a>
-                        </div>
-                        <div class="content-wrapper">
-                            <h6><a href="{{prev_url}}" title="Details page">{{prevNodeTitle}}</a></h6>
-                            <p>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" viewBox="0 0 150 150">
-                                    <path data-name="Path 39260" d="M124.059,173.8H233.151a20.874,20.874,0,0,0,14.465-5.762,19.3,19.3,0,0,0,5.99-13.91V59.047a19.3,19.3,0,0,0-5.99-13.91,20.874,20.874,0,0,0-14.465-5.762H219.514V30.358a6.514,6.514,0,0,0-3.409-5.679,7.055,7.055,0,0,0-6.818,0,6.515,6.515,0,0,0-3.409,5.679v9.017H151.333V30.358a6.515,6.515,0,0,0-3.409-5.679,7.055,7.055,0,0,0-6.818,0,6.515,6.515,0,0,0-3.409,5.679v9.017H124.061A20.873,20.873,0,0,0,109.6,45.137a19.3,19.3,0,0,0-5.99,13.91v95.082a19.3,19.3,0,0,0,5.99,13.91,20.874,20.874,0,0,0,14.465,5.762Zm109.092-13.115H124.059a6.959,6.959,0,0,1-4.821-1.92,6.436,6.436,0,0,1-2-4.637v-54.1H239.969v54.1a6.437,6.437,0,0,1-2,4.637,6.959,6.959,0,0,1-4.821,1.92ZM124.059,52.489H137.7v7.378a6.515,6.515,0,0,0,3.409,5.679,7.055,7.055,0,0,0,6.818,0,6.515,6.515,0,0,0,3.409-5.679V52.49h54.546v7.377a6.515,6.515,0,0,0,3.409,5.679,7.055,7.055,0,0,0,6.818,0,6.515,6.515,0,0,0,3.409-5.679V52.49h13.637a6.959,6.959,0,0,1,4.822,1.92,6.436,6.436,0,0,1,2,4.637V86.916H117.24V59.047a6.437,6.437,0,0,1,2-4.637,6.959,6.959,0,0,1,4.821-1.92Z" transform="translate(-103.606 -23.801)" fill="#111"></path>
-                                </svg>{{prevnodedate}}
-                            </p>
-                        </div>
-                    </div>
-                    <div class="right-wrapper" data-aos="fade-down">
-                        <div class="content-wrapper">
-                            <h6><a href="{{next_url}}" title="Details page">{{nextNodeTitle}}</a></h6>
-                            <p>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" viewBox="0 0 150 150">
-                                    <path data-name="Path 39260" d="M124.059,173.8H233.151a20.874,20.874,0,0,0,14.465-5.762,19.3,19.3,0,0,0,5.99-13.91V59.047a19.3,19.3,0,0,0-5.99-13.91,20.874,20.874,0,0,0-14.465-5.762H219.514V30.358a6.514,6.514,0,0,0-3.409-5.679,7.055,7.055,0,0,0-6.818,0,6.515,6.515,0,0,0-3.409,5.679v9.017H151.333V30.358a6.515,6.515,0,0,0-3.409-5.679,7.055,7.055,0,0,0-6.818,0,6.515,6.515,0,0,0-3.409,5.679v9.017H124.061A20.873,20.873,0,0,0,109.6,45.137a19.3,19.3,0,0,0-5.99,13.91v95.082a19.3,19.3,0,0,0,5.99,13.91,20.874,20.874,0,0,0,14.465,5.762Zm109.092-13.115H124.059a6.959,6.959,0,0,1-4.821-1.92,6.436,6.436,0,0,1-2-4.637v-54.1H239.969v54.1a6.437,6.437,0,0,1-2,4.637,6.959,6.959,0,0,1-4.821,1.92ZM124.059,52.489H137.7v7.378a6.515,6.515,0,0,0,3.409,5.679,7.055,7.055,0,0,0,6.818,0,6.515,6.515,0,0,0,3.409-5.679V52.49h54.546v7.377a6.515,6.515,0,0,0,3.409,5.679,7.055,7.055,0,0,0,6.818,0,6.515,6.515,0,0,0,3.409-5.679V52.49h13.637a6.959,6.959,0,0,1,4.822,1.92,6.436,6.436,0,0,1,2,4.637V86.916H117.24V59.047a6.437,6.437,0,0,1,2-4.637,6.959,6.959,0,0,1,4.821-1.92Z" transform="translate(-103.606 -23.801)" fill="#111"></path>
-                                </svg>{{nextnodedate}}
-                            </p>
-                        </div>
-                        <div class="img-wrapper" data-aos="fade-up" data-aos-duration="700">
-                            <a href="{{next_url}}" title="Details page">
-                                <img src="{{file_url(nextImage)}}" alt="Blog-Image"/>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+  <div class="container">
+    <div class="blog-block">
+      <div class="whole-wrapper">
+        <div class="para">{{content.field_description.0}}</div>
+        <div class="img-wrapper blogs-img-wrapper" data-aos="flip-up" data-aos-duration="500">
+          <img src="{{file_url(content.field_image['#items'].entity.uri.value)}}" alt="Blog-Image"/>
         </div>
+        <div class="para">{{content.field_content.0}}</div>
+          <div class="links-wrapper">
+            <ul class="list-unstyled" data-aos="fade-down">
+              {% for key,value in node.field_tags.value %}
+              <li>{{ content.field_tags[key]}}</li>
+              {% endfor %}
+            </ul>
+            {{ blogshare }}
+            <div class="social-icons" data-aos="fade-up">
+              {{ content.addtoany }}
+            </div>
+          </div>
+          {% if logged_in == false %}
+            <div class="login-wrapper" data-aos="fade-in">
+              <h3><a href="{{base_url}}/user/login" title="Login">Login</a> or <a href="{{base_url}}/user/register" title="Register">Register</a> to post comments</h3>
+            </div>
+          {% endif %}
+        {{content.field_comments.0}}
+        <div class="divider-wrapper next-prev-node">
+          <div class="left-wrapper" data-aos="fade-down">
+            <div class="img-wrapper" data-aos="flip-up" data-aos-duration="500">
+              <a href="{{prev_url}}" title="Details page">
+                <img src="{{file_url(prevImage)}}" alt="Blog-Image"/>
+              </a>
+            </div>
+            <div class="content-wrapper">
+              <h6><a href="{{prev_url}}" title="Details page">{{prevNodeTitle}}</a></h6>
+              <p>
+                <svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" viewBox="0 0 150 150">
+                  <path data-name="Path 39260" d="M124.059,173.8H233.151a20.874,20.874,0,0,0,14.465-5.762,19.3,19.3,0,0,0,5.99-13.91V59.047a19.3,19.3,0,0,0-5.99-13.91,20.874,20.874,0,0,0-14.465-5.762H219.514V30.358a6.514,6.514,0,0,0-3.409-5.679,7.055,7.055,0,0,0-6.818,0,6.515,6.515,0,0,0-3.409,5.679v9.017H151.333V30.358a6.515,6.515,0,0,0-3.409-5.679,7.055,7.055,0,0,0-6.818,0,6.515,6.515,0,0,0-3.409,5.679v9.017H124.061A20.873,20.873,0,0,0,109.6,45.137a19.3,19.3,0,0,0-5.99,13.91v95.082a19.3,19.3,0,0,0,5.99,13.91,20.874,20.874,0,0,0,14.465,5.762Zm109.092-13.115H124.059a6.959,6.959,0,0,1-4.821-1.92,6.436,6.436,0,0,1-2-4.637v-54.1H239.969v54.1a6.437,6.437,0,0,1-2,4.637,6.959,6.959,0,0,1-4.821,1.92ZM124.059,52.489H137.7v7.378a6.515,6.515,0,0,0,3.409,5.679,7.055,7.055,0,0,0,6.818,0,6.515,6.515,0,0,0,3.409-5.679V52.49h54.546v7.377a6.515,6.515,0,0,0,3.409,5.679,7.055,7.055,0,0,0,6.818,0,6.515,6.515,0,0,0,3.409-5.679V52.49h13.637a6.959,6.959,0,0,1,4.822,1.92,6.436,6.436,0,0,1,2,4.637V86.916H117.24V59.047a6.437,6.437,0,0,1,2-4.637,6.959,6.959,0,0,1,4.821-1.92Z" transform="translate(-103.606 -23.801)" fill="#111"></path>
+                </svg>{{prevnodedate}}
+              </p>
+            </div>
+          </div>
+          <div class="right-wrapper" data-aos="fade-down">
+            <div class="content-wrapper">
+              <h6><a href="{{next_url}}" title="Details page">{{nextNodeTitle}}</a></h6>
+              <p>
+                <svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" viewBox="0 0 150 150">
+                  <path data-name="Path 39260" d="M124.059,173.8H233.151a20.874,20.874,0,0,0,14.465-5.762,19.3,19.3,0,0,0,5.99-13.91V59.047a19.3,19.3,0,0,0-5.99-13.91,20.874,20.874,0,0,0-14.465-5.762H219.514V30.358a6.514,6.514,0,0,0-3.409-5.679,7.055,7.055,0,0,0-6.818,0,6.515,6.515,0,0,0-3.409,5.679v9.017H151.333V30.358a6.515,6.515,0,0,0-3.409-5.679,7.055,7.055,0,0,0-6.818,0,6.515,6.515,0,0,0-3.409,5.679v9.017H124.061A20.873,20.873,0,0,0,109.6,45.137a19.3,19.3,0,0,0-5.99,13.91v95.082a19.3,19.3,0,0,0,5.99,13.91,20.874,20.874,0,0,0,14.465,5.762Zm109.092-13.115H124.059a6.959,6.959,0,0,1-4.821-1.92,6.436,6.436,0,0,1-2-4.637v-54.1H239.969v54.1a6.437,6.437,0,0,1-2,4.637,6.959,6.959,0,0,1-4.821,1.92ZM124.059,52.489H137.7v7.378a6.515,6.515,0,0,0,3.409,5.679,7.055,7.055,0,0,0,6.818,0,6.515,6.515,0,0,0,3.409-5.679V52.49h54.546v7.377a6.515,6.515,0,0,0,3.409,5.679,7.055,7.055,0,0,0,6.818,0,6.515,6.515,0,0,0,3.409-5.679V52.49h13.637a6.959,6.959,0,0,1,4.822,1.92,6.436,6.436,0,0,1,2,4.637V86.916H117.24V59.047a6.437,6.437,0,0,1,2-4.637,6.959,6.959,0,0,1,4.821-1.92Z" transform="translate(-103.606 -23.801)" fill="#111"></path>
+                </svg>{{nextnodedate}}
+              </p>
+            </div>
+            <div class="img-wrapper" data-aos="fade-up" data-aos-duration="700">
+              <a href="{{next_url}}" title="Details page">
+                <img src="{{file_url(nextImage)}}" alt="Blog-Image"/>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
 </section>
