@@ -17,20 +17,24 @@
     border-radius: 10px;
   }
 
-  .box-shadow-1,
+  .box-shadow-1 {
+    box-shadow: 0px 2px 18px #00000044;
+    border-radius: 6px;
+    &:hover {
+      box-shadow: 0px 2px 18px #00000088;
+    }
+  }
+
+
+
+/* C */
+
+
   .carousels1 .content-block {
     padding: 45px 42px;
     border-radius: 6px;
     box-shadow: 0px 2px 18px #00000044;
   }
-  .content-block:hover .box-shadow-1,
-  .blogs-teasers:hover .box-shadow-1 {
-    box-shadow: 0px 2px 18px #00000088;
-  }
-
-/* C */
-
-
 
   .clients-v1 {
     .carousels-block {

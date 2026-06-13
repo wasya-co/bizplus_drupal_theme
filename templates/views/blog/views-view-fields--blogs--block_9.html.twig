@@ -1,28 +1,32 @@
 
-{# Blog Teasers #}
-<div class="col-md-12 aos-init blogs-teasers" data-aos="flip-up" data-aos-duration="200">
+{#
+ # Blog Teasers
+##}
+<div class="col-md-12 " >
+  <div class='blogs-teasers box-shadow-1'>
 
-        <div class="img-wrapper image-thumb">
-            <a href="{{fields.view_node.content |striptags|trim}}" title="{{fields.view_node_1.content |striptags|trim}}">
-                <img src="{{fields.field_image.content |striptags|trim}}" alt="{{ fields.title.content |striptags|trim}} image">
-            </a>
-        </div>
-        <div class="content-wrapper box-shadow-1">
-            <h5 class="title-link">
-              <a href="{{fields.view_node.content |striptags|trim}}" title="{{fields.view_node_1.content |striptags|trim}}"
-              >{{ fields.title.content }}</a>
-            </h5>
-            <div class="blog-area">
-                <p>{{fields.created.content}}</p>
-                <p>{{ fields.comment_count.content }}</p>
-            </div>
-            <p class="para">{{ fields.field_description.content|striptags }}</p>
-            <a class="read-more" href="{{fields.view_node.content}}" title="{{fields.view_node_1.content}}">
-              <svg class="long-arrow" xmlns="http://www.w3.org/2000/svg" width="280" height="70" viewBox="0 0 280 70">
-                <path data-name="Path 39255" d="M401.537,232.07l45.653,32.084L402.044,302.07l-.507-31.112H167.19V260.265H401.537Z" transform="translate(-167.189 -232.07)" fill="#111" fill-rule="evenodd"></path>
-              </svg>
-            </a>
+    <div class="img-wrapper image-thumb">
+      <a href="{{fields.view_node.content |striptags|trim}}" title="{{fields.view_node_1.content |striptags|trim}}">
+        <img src="{{fields.field_image.content |striptags|trim}}" alt="{{ fields.title.content |striptags|trim}} image">
+      </a>
+    </div>
 
-        </div>
+    <div class="wrap-1">
+      <h5 class="title-link">
+        <a href="{{fields.view_node.content |striptags|trim}}" title="{{fields.view_node_1.content |striptags|trim}}"
+        >{{ fields.title.content }}</a>
+      </h5>
+      <div class="blog-area">
+        <p>{{fields.created.content}}</p>
+        <p>{{ fields.comment_count.content }}</p>
+      </div>
+      <p class="para">{{ fields.field_description.content|striptags }}</p>
+      <a class="read-more" href="{{fields.view_node.content}}" title="{{fields.view_node_1.content}}">
+        <svg class="long-arrow" xmlns="http://www.w3.org/2000/svg" width="280" height="70" viewBox="0 0 280 70">
+          <path data-name="Path 39255" d="M401.537,232.07l45.653,32.084L402.044,302.07l-.507-31.112H167.19V260.265H401.537Z" transform="translate(-167.189 -232.07)" fill="#111" fill-rule="evenodd"></path>
+        </svg>
+      </a>
+    </div>
 
+  </div>
 </div>
