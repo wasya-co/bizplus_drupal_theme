@@ -4,3 +4,4 @@ www-smt :: 2026-03-14 :: LFG
                          I'm calling it 0.0.0 hoping they'll be the same
 0.1.0   :: 2026-04-13 :: introduced scss, continue on pudeyev_com, yes?
            2026-04-18 :: re-styling services for pudeyev_com
+0.1.1   :: 2026-07-17 :: for trading.wasya.co, added margin-bottom to page header.

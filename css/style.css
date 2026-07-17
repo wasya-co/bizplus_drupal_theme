@@ -1351,6 +1351,9 @@ pre[class*="language-"] {
 .alert {
   margin-bottom: 0; }
 
+section.page-title {
+  margin-bottom: 1em; }
+
 .page-title::before {
   content: "";
   position: absolute;
